@@ -3,42 +3,28 @@
 
 #include <iostream>
 #include <string>
+#include "Person.h"
+#include "Customer.h"
 
-class Patient{
+class Patient: public Customer{
 
     private:
 
-    std::string name;
-    int age;
     std::string medicalHistory;
-    int ID;
-
-    protected:
-
     int prescriptionID;
 
     public:
 
-    Patient(): name(name), age(age), medicalHistory(medicalHistory), ID(ID){}
-
-    std::string getName();
-    int getAge();
     std::string getMedicalHistory();
-    int getID();
+    int getPrescriptionID();
 
-    void setName(std::string name);
-    void setAge(int age);
+    void setPrescriptionID(int prescriptionID);
     void setMedicalHistory(std::string medicalHistory);
-    void setID(int ID);
-
-    virtual int getPrescriptionID();
-    virtual void setPrescriptionID(int prescriptionID);
 
     void greetingDialogue();
     void rightDialogue();
     void wrongDialogue();
     void checker();
-
 
 };
 

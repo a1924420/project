@@ -6,7 +6,7 @@
 #include <vector>
 #include "Medicine.h"
 
-class Storage: public Medicine {
+class Storage{
 
     private:
 

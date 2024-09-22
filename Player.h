@@ -3,8 +3,9 @@
 
 #include <iostream>
 #include <string>
+#include "Person.h"
 
-class Player{
+class Player: public Person{
 
     private:
 
@@ -16,8 +17,7 @@ class Player{
 
     public:
 
-    virtual int getScore();
-
+    int getScore();
     std::string getInventory();
     void setScore(int score);
     void setInventory(std::string inventory);

@@ -2,6 +2,10 @@
 #include <string>
 #include "Player.h"
 
+int Player::getScore(){
+    return score;
+}
+
 std::string Player::getInventory(){
     return inventory;
 }

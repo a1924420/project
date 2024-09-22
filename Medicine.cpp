@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include "Patient.h"
 #include "Medicine.h"
 
 std::string Medicine::getMedName(){
@@ -27,10 +26,3 @@ void Medicine::setDescription(std::string description){
     this->description = description;
 }
 
-int Medicine::getPrescriptionID(){
-    return prescriptionID;
-}
-
-void Medicine::setPrescriptionID(int prescriptionID){
-    this->prescriptionID = prescriptionID;
-}

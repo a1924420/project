@@ -5,13 +5,11 @@
 #include <string>
 #include "Player.h"
 
-class EndScene: public Player{
+class EndScene{
 
     private:
 
     public:
-
-    int getScore();
 
     void goodEnding();
     void badEnding();

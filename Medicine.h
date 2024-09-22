@@ -3,9 +3,8 @@
 
 #include <iostream>
 #include <string>
-#include "Patient.h"
 
-class Medicine: public Patient{
+class Medicine{
 
     private:
 

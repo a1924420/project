@@ -3,9 +3,11 @@
 
 #include <iostream>
 #include <string>
-#include "Patient.h"
+#include "Person.h"
+#include "Customer.h"
 
-class Police: public Patient{
+
+class Police: public Customer{
 
     private:
 
