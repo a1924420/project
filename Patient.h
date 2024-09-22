@@ -13,6 +13,10 @@ class Patient{
     std::string medicalHistory;
     int ID;
 
+    protected:
+
+    int prescriptionID;
+
     public:
 
     Patient(): name(name), age(age), medicalHistory(medicalHistory), ID(ID){}
@@ -26,6 +30,9 @@ class Patient{
     void setAge(int age);
     void setMedicalHistory(std::string medicalHistory);
     void setID(int ID);
+
+    virtual int getPrescriptionID();
+    virtual void setPrescriptionID(int prescriptionID);
 
 };
 

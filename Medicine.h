@@ -3,8 +3,9 @@
 
 #include <iostream>
 #include <string>
+#include "Patient.h"
 
-class Medicine{
+class Medicine: public Patient{
 
     private:
 
@@ -22,7 +23,9 @@ class Medicine{
     void setMedID(int medID);
     void setDescription(std::string description);
 
-};
+    int getPrescriptionID();
+    void setPrescriptionID(int prescriptionID);
 
+};
 
 #endif

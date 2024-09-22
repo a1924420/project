@@ -8,8 +8,11 @@ class Player{
 
     private:
 
-    int score;
     std::string inventory;
+
+    protected:
+
+    int score;
 
     public:
 
