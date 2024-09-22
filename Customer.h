@@ -10,6 +10,7 @@ class Customer: public Person{
     private:
 
     int ID;
+    bool correctOrNot;
 
     public:
 
@@ -17,7 +18,11 @@ class Customer: public Person{
 
     void setID(int ID);
 
-    
+    bool getcCorrectOrNot();
+
+    void setcCorrectOrNot(bool correctOrNot);
+
+    void checker();
 
 };
 

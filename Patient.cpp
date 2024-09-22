@@ -24,4 +24,3 @@ void rightDialogue(){}
 
 void wrongDialogue(){}
 
-void checker(){}

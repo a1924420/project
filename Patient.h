@@ -24,7 +24,6 @@ class Patient: public Customer{
     void greetingDialogue();
     void rightDialogue();
     void wrongDialogue();
-    void checker();
 
 };
 

@@ -15,6 +15,8 @@ class Game {
 
     public:
 
+    Game(std::string name, std::string developers, std::string publisher, std::string releaseDate, std::string genre);
+
     std::string getName();
     std::string getDevelopers();
     std::string getPublisher();

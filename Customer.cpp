@@ -10,3 +10,13 @@ int Customer::getID(){
 void Customer::setID(int ID){
     this->ID = ID;
 }
+
+bool Customer::getcCorrectOrNot(){
+    return correctOrNot;
+}
+
+void Customer::setcCorrectOrNot(bool correctOrNot){
+    this->correctOrNot = correctOrNot;
+}
+
+void checker(){}

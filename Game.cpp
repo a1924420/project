@@ -2,6 +2,9 @@
 #include <string>
 #include "Game.h"
 
+Game::Game(std::string name, std::string developers, std::string publisher, std::string releaseDate, std::string genre): 
+    name(name), developers(developers), publisher(publisher), releaseDate(releaseDate), genre(genre){}
+
 std::string Game::getName(){
     return name;
 }
