@@ -24,6 +24,7 @@ class Player{
 
     void takeMedicine();
     void giveMedicine();
+    void deny();
 
 };
 

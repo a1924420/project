@@ -35,3 +35,11 @@ void Patient::setMedicalHistory(std::string medicalHistory){
 void Patient::setID(int ID){
     this->ID = ID;
 }
+
+void greetingDialogue(){}
+
+void rightDialogue(){}
+
+void wrongDialogue(){}
+
+void checker(){}

@@ -17,3 +17,5 @@ void Player::setInventory(std::string inventory){
 void Player::takeMedicine(){}
 
 void Player::giveMedicine(){}
+
+void Player::deny(){}

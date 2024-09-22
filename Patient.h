@@ -34,6 +34,12 @@ class Patient{
     virtual int getPrescriptionID();
     virtual void setPrescriptionID(int prescriptionID);
 
+    void greetingDialogue();
+    void rightDialogue();
+    void wrongDialogue();
+    void checker();
+
+
 };
 
 #endif 
