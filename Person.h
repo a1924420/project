@@ -4,7 +4,8 @@
 #include <iostream>
 #include <string>
 
-class Person{
+class Person
+{
 private:
     std::string name;
     int age;
@@ -15,7 +16,6 @@ public:
 
     void setName();
     void setAge();
-
 };
 
 #endif
