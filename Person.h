@@ -5,14 +5,11 @@
 #include <string>
 
 class Person{
-
-    private:
-
+private:
     std::string name;
     int age;
 
-    public:
-
+public:
     std::string getName();
     int getAge();
 
