@@ -15,6 +15,9 @@ class Storage{
 
     public:
 
+    Storage();
+    Storage(int numOfMedicines);
+
     int getNumOfMedicines();
     std::vector<Medicine> getMedicines();
     void setNumOfMedicines(int numOfMedicines);

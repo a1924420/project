@@ -4,6 +4,10 @@
 #include "Medicine.h"
 #include "Storage.h"
 
+Storage::Storage(): numOfMedicines(0), medicines(0){}
+
+Storage::Storage(int numOfMedicines): numOfMedicines(numOfMedicines), medicines(0){}
+
 int Storage::getNumOfMedicines(){
     return numOfMedicines;
 }
