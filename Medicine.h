@@ -14,6 +14,10 @@ class Medicine{
 
     public:
 
+    Medicine();
+
+    Medicine(std::string medName, int medID, std::string description);
+
     std::string getMedName();
     int getMedID();
     std::string getDescription();

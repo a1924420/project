@@ -2,6 +2,11 @@
 #include <string>
 #include "Medicine.h"
 
+Medicine::Medicine(): medName(" "), medID(0), description(" "){}
+
+Medicine::Medicine(std::string medName, int medID, std::string description):
+medName(medName), medID(medID), description(description){}
+
 std::string Medicine::getMedName(){
     return medName;
 }
