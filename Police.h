@@ -13,7 +13,8 @@ class Police: public Customer{
 
     public:
 
-    void arrest();
+    void rightDialogue();
+    void wrongDialogue();
 
 };
 

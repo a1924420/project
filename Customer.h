@@ -18,11 +18,14 @@ class Customer: public Person{
 
     void setID(int ID);
 
-    bool getcCorrectOrNot();
+    bool getCorrectOrNot();
 
-    void setcCorrectOrNot(bool correctOrNot);
+    void setCorrectOrNot(bool correctOrNot);
 
     void checker();
+
+    virtual void rightDialogue();
+    virtual void wrongDialogue();
 
 };
 

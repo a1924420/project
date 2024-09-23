@@ -11,11 +11,11 @@ void Customer::setID(int ID){
     this->ID = ID;
 }
 
-bool Customer::getcCorrectOrNot(){
+bool Customer::getCorrectOrNot(){
     return correctOrNot;
 }
 
-void Customer::setcCorrectOrNot(bool correctOrNot){
+void Customer::setCorrectOrNot(bool correctOrNot){
     this->correctOrNot = correctOrNot;
 }
 
