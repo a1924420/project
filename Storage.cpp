@@ -29,3 +29,17 @@ void Storage::addMedicine(Medicine med){
     medicines.push_back(med);
     numOfMedicines = medicines.size();
 }
+
+void Storage::removeMedicine(Medicine med){
+
+    std::vector<Medicine> newMedicines;
+
+    for (int i = 0; i < numOfMedicines; i++){
+        if (medicines[i].getMedID() != med.getMedID()){
+            newMedicines.push_back(medicines[i]);
+        }
+    }
+
+    medicines = newMedicines;
+    numOfMedicines = medicines.size();
+}

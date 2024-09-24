@@ -23,6 +23,7 @@ class Storage{
     void setNumOfMedicines(int numOfMedicines);
     void setMedicines(std::vector<Medicine> medicines);
     void addMedicine(Medicine med);
+    void removeMedicine(Medicine med);
 
 };
 

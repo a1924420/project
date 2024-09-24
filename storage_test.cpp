@@ -82,6 +82,25 @@ int main(){
         std::cout << "Description: " << meds.getDescription() << std::endl;
     }
 
+    newStorage.removeMedicine(med5);
+
+    std::cout << std::endl;
+
+    std::cout << "Medicine 2 Removed:" << std::endl;
+
+    std::cout << std::endl;
+
+    int newNum2 = newStorage.getNumOfMedicines();
+    std::cout << "Number of Medicines: " << newNum2 << std::endl;
+
+    for (int i = 0; i < newNum2; i++){
+        Medicine meds = newStorage.getMedicines()[i];
+        std::cout << "Medicine " << i+1 << ":" << std::endl;
+        std::cout << "Name: " << meds.getMedName() << std::endl;
+        std::cout << "ID Number: " << meds.getMedID() << std::endl;
+        std::cout << "Description: " << meds.getDescription() << std::endl;
+    }
+
     return 0;
 
 }
