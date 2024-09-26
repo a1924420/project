@@ -9,12 +9,12 @@ class Customer: public Person{
 
     private:
 
-    int ID;
+    std::string ID;
     bool correctOrNot;
 
     public:
 
-    int getID();
+    std::string getID();
 
     void setID(int ID);
 

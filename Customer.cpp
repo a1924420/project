@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 
-int Customer::getID() { return ID; }
+std::string Customer::getID() { return ID; }
 
 void Customer::setID(int ID) { this->ID = ID; }
 
