@@ -34,6 +34,29 @@ int main(){
     std::cout << "Medicine 3 ID Number: " << med3.getMedID() << std::endl;
     std::cout << "Medicine 3 Description: " << med3.getDescription() << std::endl;
 
+    Medicine newMed;
+
+    std::string name;
+    std::cout << "Enter new medicine name: " << std::endl;
+    std::getline(std::cin, name);
+    newMed.setMedName(name);
+
+    int medID;
+    std::cout << "Enter new medicine ID: " << std::endl;
+    std::cin >> medID;
+    newMed.setMedID(medID);
+
+    std::cin.ignore();
+
+    std::string description;
+    std::cout << "Enter new medicine description: " << std::endl;
+    std::getline(std::cin, description);
+    newMed.setDescription(description);
+
+    std::cout << "Medicine Name: " << newMed.getMedName() << std::endl;
+    std::cout << "Medicine ID: " << newMed.getMedID() << std::endl;
+    std::cout << "Medicine Description: " << newMed.getDescription() << std::endl;
+
     return 0;
 
 }
