@@ -14,4 +14,6 @@ void Customer::setCorrectOrNot(bool correctOrNot) {
   this->correctOrNot = correctOrNot;
 }
 
-void checker() {}
+void checker() {
+    // if (medID == prescriptionID) -> need to include Patient.h 
+}
