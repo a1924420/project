@@ -7,15 +7,20 @@
 class Person
 {
 private:
+
     std::string name;
+    
     int age;
 
 public:
-    std::string getName();
-    int getAge();
 
-    void setName();
-    void setAge();
+    virtual std::string getName() = 0;
+
+    virtual int getAge() = 0;
+
+    virtual void setName() = 0;
+
+    virtual void setAge() = 0;
 };
 
 #endif

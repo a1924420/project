@@ -11,11 +11,17 @@ class Player: public Person{
 
     std::string inventory;
 
-    protected:
-
     int score;
 
     public:
+
+    std::string getName();
+    
+    int getAge();
+
+    void setName();
+
+    void setAge();
 
     int getScore();
     std::string getInventory();

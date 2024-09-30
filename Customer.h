@@ -14,6 +14,14 @@ class Customer: public Person{
 
     public:
 
+    std::string getName();
+    
+    int getAge();
+
+    void setName();
+
+    void setAge();
+
     std::string getID();
 
     void setID(int ID);

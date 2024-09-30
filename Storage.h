@@ -45,10 +45,10 @@ class Storage{
     void setMedicines(std::vector<Medicine> medicines);
 
     // Adds a new medicine to the storage
-    void addMedicine(Medicine med);
+    void addMedicine(Medicine med); // remove function
 
     // Removes a medicine from the storage
-    void removeMedicine(Medicine med);
+    void removeMedicine(Medicine med); // remove this function
 
 };
 
