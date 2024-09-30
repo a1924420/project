@@ -8,6 +8,10 @@
 #include "Storage.h"
 #include "EndScene.h"
 
+#include <iostream>
+#include <string>
+#include <vector>
+
 int main(){
 
     Game game("Unlicensed Pharmacy", "PharmaForge Studios", "Rx Interactive", "22/09/2024", "Dark Comedy");
