@@ -14,7 +14,7 @@
 
 int main(){
 
-    Game game("Unlicensed Pharmacy", "PharmaForge Studios", "Rx Interactive", "22/09/2024", "Dark Comedy");
+    Game game("Backyard Pharmacy", "SnifferDogg38 Studios", "420° Entertainment", "22/09/2024", "Dark Comedy");
 
     int menu;
 
@@ -28,11 +28,12 @@ int main(){
         if (menu == 1){
             std::cout << "Here are the instructions: " << std::endl;
         } else if (menu == 2){
-            std::cout << "Name: " << game.getName() << std::endl;
-            std::cout << "Developers: " << game.getDevelopers() << std::endl;
-            std::cout << "Publisher: " << game.getPublisher() << std::endl;
+            std::cout << "Name:         " << game.getName() << std::endl;
+            std::cout << "Developers:   " << game.getDevelopers() << std::endl;
+            std::cout << "Publisher:    " << game.getPublisher() << std::endl;
             std::cout << "Release Date: " << game.getReleaseDate() << std::endl;
-            std::cout << "Genre: " << game.getGenre() << std::endl;
+            std::cout << "Genre:        " << game.getGenre() << std::endl;
+            std::cout << std::endl;
         } else if (menu == 3){
             break;
         } else {
