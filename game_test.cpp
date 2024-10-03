@@ -1,8 +1,20 @@
 #include <iostream>
 #include <string>
 #include "Game.h"
+#include "GameTest.h"
 
 int main(){
+
+    GameTest gameTest;
+
+    gameTest.runTests();
+
+    return 0;
+}
+
+// Keeping this here for now, probably will delete later
+
+/*int main(){
 
     Game game("Unlicensed Pharmacy", "PharmaForge Studios", "Rx Interactive", "22/09/2024", "Dark Comedy");
 
@@ -81,4 +93,4 @@ int main(){
 
     return 0;
 
-}
+}*/
