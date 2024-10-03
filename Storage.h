@@ -12,11 +12,9 @@ class Storage{
 
     private:
 
-    // Number of medicines in storage
-    int numOfMedicines;
-
-    // Vector used to store the list of Medicine objects
-    std::vector<Medicine> medicines;
+    // Private variables used to store the storage details
+    int numOfMedicines; // Number of medicines in storage
+    std::vector<Medicine> medicines; // Vector used to store the list of Medicine objects
 
     public:
 
