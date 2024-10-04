@@ -1,41 +1,34 @@
-#ifndef STORAGETEST_H
-#define STORAGETEST_H
+#ifndef VISITORTEST_H
+#define VISITORTEST_H
 
 #include <iostream>
 #include <string>
 #include <vector>
-#include "Medicine.h"
-#include "Storage.h"
+#include "Customer.h"
+#include "Visitor.h"
 
-class StorageTest{
+class VisitorTest{
 
     public:
 
     void runTests(){
-        testDefault();
-        std::cout << "\nDefault Test Complete.\n" << std::endl;
-        testConstructor();
-        std::cout << "\nConstructor Test Complete.\n" << std::endl;
-        testGettersAndSetters();
-        std::cout << "\nGetter and Setter Test Complete.\n" << std::endl;
-        testAddMedicine();
-        std::cout << "\nAdd Medicine Test Complete.\n" << std::endl;
-        testRemoveMedicine();
-        std::cout << "\nRemove Medicine Test Complete.\n" << std::endl;
+
     }
 
     private:
 
     void testDefault(){
-        Storage storage;
+        Visitor visitor;
 
-        std::cout << "Number of Medicines in Storage: " << storage.getNumOfMedicines() << std::endl;
+        std::cout << "Current Number of Visitors: " << visitor.getCurrentCapacity() << std::endl;
+        std::cout << "Maximum Number of Visitors: " << visitor.getMaxCapacity() << std::endl;
+
     }
 
     void testConstructor(){
-        Medicine med1("Panadol", 332528, "Treats pain and reduces fever");
+        Customer c1(1234);
 
-        Medicine med2("Xanax", 11375, "Treats anxiety");
+        Customer c2(5678);
 
         Storage storage(2);
 

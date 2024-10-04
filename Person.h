@@ -6,7 +6,7 @@
 
 class Person
 {
-private:
+protected:
 
     std::string name;
     
@@ -18,9 +18,9 @@ public:
 
     virtual int getAge() = 0;
 
-    virtual void setName() = 0;
+    virtual void setName(std::string name) = 0;
 
-    virtual void setAge() = 0;
+    virtual void setAge(int age) = 0;
 };
 
 #endif

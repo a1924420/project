@@ -4,7 +4,33 @@
 #include <iostream>
 #include <string>
 
-std::string Customer::getID() { return ID; }
+Customer::Customer(): ID(0), correctOrNot(false){
+    setName(" ");
+    setAge(0);
+}
+
+Customer::Customer(std::string name, int age, int ID): ID(ID), correctOrNot(false){
+    setName(name);
+    setAge(age);
+}
+
+std::string Customer::getName(){
+    return name;
+}
+
+int Customer::getAge(){
+    return age;
+}
+
+void Customer::setName(std::string name){
+    this->name = name;
+}
+
+void Customer::setAge(int age){
+    this->age = age;
+}
+
+int Customer::getID() { return ID; }
 
 void Customer::setID(int ID) { this->ID = ID; }
 

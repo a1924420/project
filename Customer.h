@@ -9,20 +9,24 @@ class Customer: public Person{
 
     private:
 
-    std::string ID;
+    int ID;
     bool correctOrNot;
 
     public:
 
-    std::string getName();
+    Customer();
+
+    Customer(std::string name, int age, int ID);
+
+    std::string getName() override;
     
-    int getAge();
+    int getAge() override;
 
-    void setName();
+    void setName(std::string name) override;
 
-    void setAge();
+    void setAge(int age) override;
 
-    std::string getID();
+    int getID();
 
     void setID(int ID);
 
