@@ -3,8 +3,17 @@
 #include <vector>
 #include "Medicine.h"
 #include "Storage.h"
+#include "StorageTest.h"
 
 int main(){
+    StorageTest storageTest;
+
+    storageTest.runTests();
+
+    return 0;
+}
+
+/*int main(){
 
     Medicine med1("Panadol", 332528, "Treats pain and reduces fever");
 
@@ -62,10 +71,7 @@ int main(){
 
     Medicine med6("Cardiolyn", 562917, "Helps regulate blood pressure and supports heart health");
 
-    std::vector<Medicine> medList;
-    medList.push_back(med4);
-    medList.push_back(med5);
-    medList.push_back(med6);
+    std::vector<Medicine> medList = {med4, med5, med6};
 
     Storage newStorage;
 
@@ -103,4 +109,4 @@ int main(){
 
     return 0;
 
-}
+}*/
