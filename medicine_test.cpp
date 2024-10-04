@@ -1,8 +1,17 @@
 #include <iostream>
 #include <string>
 #include "Medicine.h"
+#include "MedicineTest.h"
 
 int main(){
+    MedicineTest medTest;
+
+    medTest.runTests();
+
+    return 0;
+}
+
+/*int main(){
 
     Medicine med1("Panadol", 332528, "Treats pain and reduces fever");
 
@@ -59,4 +68,4 @@ int main(){
 
     return 0;
 
-}
+}*/

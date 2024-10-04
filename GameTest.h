@@ -11,9 +11,13 @@ class GameTest{
 
     void runTests(){
         testDefault();
+        std::cout << "\nDefault Test Complete.\n" << std::endl;
         testConstructor();
+        std::cout << "\nConstructor Test Complete.\n" << std::endl;
         testGettersAndSetters();
+        std::cout << "\nGetters and Setters Test Complete.\n" << std::endl;
         testModifyGame();
+        std::cout << "\nModify Game Test Complete.\n" << std::endl;
     }
 
     private:
