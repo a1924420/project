@@ -18,13 +18,13 @@ class Customer: public Person{
 
     Customer(std::string name, int age, int ID);
 
-    std::string getName() override;
+    std::string getName();
     
-    int getAge() override;
+    int getAge();
 
-    void setName(std::string name) override;
+    void setName(std::string name);
 
-    void setAge(int age) override;
+    void setAge(int age);
 
     int getID();
 

@@ -43,3 +43,6 @@ void Customer::setCorrectOrNot(bool correctOrNot) {
 void checker() {
     // if (medID == prescriptionID) -> need to include Patient.h 
 }
+
+void Customer::rightDialogue(){}
+void Customer::wrongDialogue(){}

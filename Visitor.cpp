@@ -40,17 +40,23 @@ void Visitor::setMaxCapacity(int maxCapacity){
 // @param visitors: new list of customers in the visitors array
 void Visitor::setVisitors(std::vector<Customer> visitors){
     this->visitors = visitors;
+    currentCapacity = visitors.size();
 }
 
 // Adds a new customer to the visitors array
 // @param customer: new customer being added to the visitors array
 void Visitor::addCustomer(Customer customer){
 
-    // Add the customer to the visitors vector
-    visitors.push_back(customer);
+    // Loop to add customer to visitors array
+    if (currentCapacity < maxCapacity){
+        // Add the customer to the visitors array
+        visitors.push_back(customer);
+        // Updates current capacity when customer is added
+        currentCapacity++;
+    } else {
+        std::cout << "Cannot add more customers. Max capacity reached." << std::endl;
+    }
 
-    // Update the current capacity of customers in the visitors array to match the current vector size
-    currentCapacity = visitors.size();
 }
 
 // Removes a  customer from the visitors array

@@ -10,10 +10,10 @@ int Person::getAge(){
     return age;
 }
 
-void Person::setName(){
+void Person::setName(std::string name){
     this->name = name;
 }
 
-void Person::setAge(){
+void Person::setAge(int age){
     this->age = age;
 }

@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "Person.h"
 #include "Customer.h"
 #include "Visitor.h"
 
@@ -12,159 +13,168 @@ class VisitorTest{
     public:
 
     void runTests(){
-
+        testDefault();
+        std::cout << "\nDefault Test Complete.\n" << std::endl;
+        testConstructor();
+        std::cout << "\nConstructor Test Complete.\n" << std::endl;
+        testGettersAndSetters();
+        std::cout << "\nGetter and Setter Test Complete.\n" << std::endl;
+        testAddCustomer();
+        std::cout << "\nAdd Customer Test Complete.\n" << std::endl;
+        testRemoveCustomer();
+        std::cout << "\nRemove Customer Test Complete.\n" << std::endl;
     }
 
     private:
 
     void testDefault(){
-        Visitor visitor;
+        Visitor visitors;
 
-        std::cout << "Current Number of Visitors: " << visitor.getCurrentCapacity() << std::endl;
-        std::cout << "Maximum Number of Visitors: " << visitor.getMaxCapacity() << std::endl;
+        std::cout << "Current Number of Visitors: " << visitors.getCurrentCapacity() << std::endl;
+        std::cout << "Maximum Number of Visitors: " << visitors.getMaxCapacity() << std::endl;
 
     }
 
     void testConstructor(){
-        Customer c1(1234);
+        Customer c1("Alice Johnson", 28, 10234);
 
-        Customer c2(5678);
+        Customer c2("Michael Roberts", 35, 56789);
 
-        Storage storage(2);
+        Visitor visitors(0, 2);
 
-        int num = storage.getNumOfMedicines();
+        visitors.addCustomer(c1);
 
-        std::cout << "Number of Medicines: " << num << std::endl;
+        visitors.addCustomer(c2);
 
-        storage.addMedicine(med1);
-
-        storage.addMedicine(med2);
-
-        for (int i = 0; i < num; i++){
-            Medicine med = storage.getMedicines()[i];
-            std::cout << "Medicine " << i+1 << ":" << std::endl;
-            std::cout << "Name: " << med.getMedName() << std::endl;
-            std::cout << "ID Number: " << med.getMedID() << std::endl;
-            std::cout << "Description: " << med.getDescription() << std::endl;
+        for (int i = 0; i < visitors.getCurrentCapacity(); i++){
+            Customer customer = visitors.getVisitors()[i];
+            std::cout << "Customer " << i+1 << ":" << std::endl;
+            std::cout << "Name: " << customer.getName() << std::endl;
+            std::cout << "ID Number: " << customer.getAge() << std::endl;
+            std::cout << "Description: " << customer.getID() << std::endl;
         }
+
+        std::cout << "Current Number of Visitors: " << visitors.getCurrentCapacity() << std::endl;
+        std::cout << "Maximum Number of Visitors: " << visitors.getMaxCapacity() << std::endl;
     }
 
     void testGettersAndSetters(){
-        Medicine med1("Prolaxa", 948273, "Treats chronic digestive issues and helps regulate bowel movements");
+        Customer c1("Emily Davis", 22, 78901);
 
-        Medicine med2("Neurovex", 784329, "Used for alleviating nerve pain and reducing symptoms of neuropathy");
+        Customer c2("David Smith", 40, 45321);
 
-        Medicine med3("Cardiolyn", 562917, "Helps regulate blood pressure and supports heart health");
+        Customer c3("Sarah Lee", 31, 90234);
 
-        Storage storage;
+        Visitor visitors(0, 3);
 
-        std::vector<Medicine> medList;
-        medList.push_back(med1);
-        medList.push_back(med2);
-        medList.push_back(med3);
+        std::vector<Customer> customerList;
+        customerList.push_back(c1);
+        customerList.push_back(c2);
+        customerList.push_back(c3);
 
-        storage.setMedicines(medList);
+        visitors.setVisitors(customerList);
 
-        int num = storage.getNumOfMedicines();
-        std::cout << "Number of Medicines: " << num << std::endl;
+        std::cout << "Current Number of Visitors: " << visitors.getCurrentCapacity() << std::endl;
+        std::cout << "Maximum Number of Visitors: " << visitors.getMaxCapacity() << std::endl;
 
-        for (int i = 0; i < num; i++){
-            Medicine meds = storage.getMedicines()[i];
-            std::cout << "Medicine " << i+1 << ":" << std::endl;
-            std::cout << "Name: " << meds.getMedName() << std::endl;
-            std::cout << "ID Number: " << meds.getMedID() << std::endl;
-            std::cout << "Description: " << meds.getDescription() << std::endl;
+        for (int i = 0; i < visitors.getCurrentCapacity(); i++){
+            Customer customer = visitors.getVisitors()[i];
+            std::cout << "Customer " << i+1 << ":" << std::endl;
+            std::cout << "Name: " << customer.getName() << std::endl;
+            std::cout << "ID Number: " << customer.getAge() << std::endl;
+            std::cout << "Description: " << customer.getID() << std::endl;
         }
     }
 
-    void testAddMedicine(){
-        Medicine med1("Panadol", 332528, "Treats pain and reduces fever");
+    void testAddCustomer(){
+        Customer c1("Emily Davis", 22, 78901);
 
-        Medicine med2("Xanax", 11375, "Treats anxiety");
+        Customer c2("Michael Roberts", 35, 56789);
 
-        Storage storage(2);
+        Visitor visitors(0, 3);
 
-        int num = storage.getNumOfMedicines();
+        visitors.addCustomer(c1);
 
-        std::cout << "Number of Medicines: " << num << std::endl;
+        visitors.addCustomer(c2);
 
-        storage.addMedicine(med1);
-
-        storage.addMedicine(med2);
-
-        for (int i = 0; i < num; i++){
-            Medicine med = storage.getMedicines()[i];
-            std::cout << "Medicine " << i+1 << ":" << std::endl;
-            std::cout << "Name: " << med.getMedName() << std::endl;
-            std::cout << "ID Number: " << med.getMedID() << std::endl;
-            std::cout << "Description: " << med.getDescription() << std::endl;
+        for (int i = 0; i < visitors.getCurrentCapacity(); i++){
+            Customer customer = visitors.getVisitors()[i];
+            std::cout << "Customer " << i+1 << ":" << std::endl;
+            std::cout << "Name: " << customer.getName() << std::endl;
+            std::cout << "ID Number: " << customer.getAge() << std::endl;
+            std::cout << "Description: " << customer.getID() << std::endl;
         }
+
+        std::cout << "Current Number of Visitors: " << visitors.getCurrentCapacity() << std::endl;
+        std::cout << "Maximum Number of Visitors: " << visitors.getMaxCapacity() << std::endl;
 
         std::cout << std::endl;
 
-        std::cout << "New Medicine Added:" << std::endl;
+        std::cout << "New Customer Added:" << std::endl;
 
         std::cout << std::endl;
 
-        storage.setNumOfMedicines(3);
+        Customer c3("James Wilson", 45, 12098);
 
-        num = storage.getNumOfMedicines();
+        visitors.addCustomer(c3);
 
-        Medicine med3("Adderall", 4036383, "Increases focus and controls behaviour problems");
-
-        storage.addMedicine(med3);
-
-        for (int i = 0; i < num; i++){
-            Medicine med = storage.getMedicines()[i];
-            std::cout << "Medicine " << i+1 << ":" << std::endl;
-            std::cout << "Name: " << med.getMedName() << std::endl;
-            std::cout << "ID Number: " << med.getMedID() << std::endl;
-            std::cout << "Description: " << med.getDescription() << std::endl;
+        for (int i = 0; i < visitors.getCurrentCapacity(); i++){
+            Customer customer = visitors.getVisitors()[i];
+            std::cout << "Customer " << i+1 << ":" << std::endl;
+            std::cout << "Name: " << customer.getName() << std::endl;
+            std::cout << "ID Number: " << customer.getAge() << std::endl;
+            std::cout << "Description: " << customer.getID() << std::endl;
         }
+
+        std::cout << "Current Number of Visitors: " << visitors.getCurrentCapacity() << std::endl;
+        std::cout << "Maximum Number of Visitors: " << visitors.getMaxCapacity() << std::endl;
     }
 
-    void testRemoveMedicine(){
-        Medicine med1("Panadol", 332528, "Treats pain and reduces fever");
+    void testRemoveCustomer(){
+        Customer c1("Emily Davis", 22, 78901);
 
-        Medicine med2("Xanax", 11375, "Treats anxiety");
+        Customer c2("David Smith", 40, 45321);
 
-        Medicine med3("Adderall", 4036383, "Increases focus and controls behaviour problems");
+        Customer c3("Sarah Lee", 31, 90234);
 
-        Storage storage(3);
+        Visitor visitors(0, 3);
 
-        storage.addMedicine(med1);
+        visitors.addCustomer(c1);
 
-        storage.addMedicine(med2);
+        visitors.addCustomer(c2);
 
-        storage.addMedicine(med3);
+        visitors.addCustomer(c3);
 
-        for (int i = 0; i < storage.getNumOfMedicines(); i++){
-            Medicine med = storage.getMedicines()[i];
-            std::cout << "Medicine " << i+1 << ":" << std::endl;
-            std::cout << "Name: " << med.getMedName() << std::endl;
-            std::cout << "ID Number: " << med.getMedID() << std::endl;
-            std::cout << "Description: " << med.getDescription() << std::endl;
+        for (int i = 0; i < visitors.getCurrentCapacity(); i++){
+            Customer customer = visitors.getVisitors()[i];
+            std::cout << "Customer " << i+1 << ":" << std::endl;
+            std::cout << "Name: " << customer.getName() << std::endl;
+            std::cout << "ID Number: " << customer.getAge() << std::endl;
+            std::cout << "Description: " << customer.getID() << std::endl;
         }
 
-        storage.removeMedicine(med2);
+        std::cout << "Current Number of Visitors: " << visitors.getCurrentCapacity() << std::endl;
+        std::cout << "Maximum Number of Visitors: " << visitors.getMaxCapacity() << std::endl;
+
+        visitors.removeCustomer(c2);
 
         std::cout << std::endl;
 
-        std::cout << "Medicine 2 Removed:" << std::endl;
+        std::cout << "Customer 2 Removed:" << std::endl;
 
         std::cout << std::endl;
 
-        std::cout << "Number of Medicines: " << storage.getNumOfMedicines() << std::endl;
-
-        for (int i = 0; i < storage.getNumOfMedicines(); i++){
-            Medicine meds = storage.getMedicines()[i];
-            std::cout << "Medicine " << i+1 << ":" << std::endl;
-            std::cout << "Name: " << meds.getMedName() << std::endl;
-            std::cout << "ID Number: " << meds.getMedID() << std::endl;
-            std::cout << "Description: " << meds.getDescription() << std::endl;
+        for (int i = 0; i < visitors.getCurrentCapacity(); i++){
+            Customer customer = visitors.getVisitors()[i];
+            std::cout << "Customer " << i+1 << ":" << std::endl;
+            std::cout << "Name: " << customer.getName() << std::endl;
+            std::cout << "ID Number: " << customer.getAge() << std::endl;
+            std::cout << "Description: " << customer.getID() << std::endl;
         }
+
+        std::cout << "Current Number of Visitors: " << visitors.getCurrentCapacity() << std::endl;
+        std::cout << "Maximum Number of Visitors: " << visitors.getMaxCapacity() << std::endl;
     }
-
 };
 
 #endif
