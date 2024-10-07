@@ -4,18 +4,19 @@
 #include <iostream>
 #include <string>
 
-// abstract class that all the entities will inherit from
+// abstract class that all entities will inherit from
 
-class Person
-{
-private:
+class Person {
+protected:
     std::string name;
     int age;
 
 public:
+    // getters
     virtual std::string getName() = 0;
     virtual int getAge() = 0;
 
+    // setters
     virtual void setName(std::string name) = 0;
     virtual void setAge(int age) = 0;
 };

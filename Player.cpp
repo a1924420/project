@@ -2,6 +2,54 @@
 #include <string>
 #include "Player.h"
 
+using namespace std;
+
+// constructors
+Player::Player() {
+    name = "Undefined";
+    age = 0;
+    inventory = 0;
+    int score = 0;
+};
+
+Player::Player(string name, int age, int inventory, int score) {
+    this->name = name;
+    this->age = age;
+    this->inventory = inventory;
+    this->score = score;
+};
+
+// setters
+void Player::setName(string name) {
+    this->name = name;
+};
+
+void Player::setAge(int age) {
+    this->age = age;
+};
+
+void Player::setScore(int score) {
+    this->score = score;
+};
+
+void Player::setScore(int score){
+    this->score = score;
+}
+
+void Player::setInventory(int medicine){
+    // takes an id
+    this->inventory = medicine; 
+}
+
+// getters
+string Player::getName() {
+    return name;
+};
+
+int Player::getAge() {
+    return age;
+};
+
 int Player::getScore(){
     return score;
 }
@@ -10,24 +58,30 @@ int Player::getInventory(){
     return inventory;
 }
 
-void Player::setScore(int score){
-    this->score = score;
-}
-
-void Player::setInventory(int medicine){
-    // takes the id of a medicine held in storage
-    this->inventory = medicine; 
-}
-
+//player behaviours
 void Player::takeMedicine(int medicineID){
     // takes the id of a medicine held in storage 
-    this->inventory = medicineID;
+
+    if (medicineID <= 8 && medicineID >= 0) {
+        // if medicine between 0 and 8, inclusive
+        this->inventory = medicineID;
+    }
+
+    else {
+        cout << "Invalid medicine!";
+    }
 }
 
 void Player::giveMedicine(){
-    //
+    // may be redundant
+    // replace with the checker function from customer
 }
 
 void Player::deny(){
-    //
+    // gives unique dialogue
+    // skipping to next customer is done in main()
+
+    cout << "Nuh-uh... that's a cop! A pig! An authority figure!" << endl
+    << "'No, officer,' you say. 'We don't sell any medicines around here. Only vapes!'" << endl
+    << "Your customer looks disgruntled and walks away." << endl;
 }

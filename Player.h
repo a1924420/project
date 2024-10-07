@@ -14,17 +14,23 @@ private:
     int score;
 
 public:
+    // constructors
+    Player();
+    Player(string name, int age, int inventory, int score);
     
+    // setters
     void setName(string name);
     void setAge(int age);
     void setScore(int score);
     void setInventory(int medicine);
 
+    // getters
     string getName();
     int getAge();
     int getScore();
     int getInventory();
 
+    // player behaviours
     void takeMedicine(int medicineID);
     void giveMedicine();
     void deny();
