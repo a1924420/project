@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "initializer_list": "cpp",
+        "iostream": "cpp",
+        "istream": "cpp",
+        "locale": "cpp",
+        "streambuf": "cpp",
+        "new": "cpp",
+        "string": "cpp",
+        "typeinfo": "cpp",
+        "ostream": "cpp"
+    }
+}
