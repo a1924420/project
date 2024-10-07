@@ -43,4 +43,10 @@ int main(){
 
     std::cout << "The game has begun." << std::endl;
 
+    std::cout << "Customer 1 enters." << std::endl;
+
+    // Customer 1 introduction
+
+    
+
 }
