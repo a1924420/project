@@ -13,7 +13,15 @@ Player::Player() {
 };
 
 Player::Player(string name, int age, int inventory, int score) {
-    this->name = name;
+    if (name.length() <= 12 && name.length() > 0) {
+        this->name = name;
+    }
+
+    else {
+        cout << "Name is too long!";
+        this->name = "Undefined";
+    }
+    
     this->age = age;
     this->inventory = inventory;
     this->score = score;
@@ -21,7 +29,9 @@ Player::Player(string name, int age, int inventory, int score) {
 
 // setters
 void Player::setName(string name) {
-    this->name = name;
+    if (name.length() <= 12 && name.length() > 0) {
+        this->name = name;
+    }
 };
 
 void Player::setAge(int age) {
@@ -37,7 +47,7 @@ void Player::setScore(int score){
 }
 
 void Player::setInventory(int medicine){
-    // takes an id
+    // takes an id, does not need to be within bounds
     this->inventory = medicine; 
 }
 
@@ -58,7 +68,7 @@ int Player::getInventory(){
     return inventory;
 }
 
-//player behaviours
+// player behaviours
 void Player::takeMedicine(int medicineID){
     // takes the id of a medicine held in storage 
 
@@ -68,7 +78,7 @@ void Player::takeMedicine(int medicineID){
     }
 
     else {
-        cout << "Invalid medicine!";
+        cout << "Invalid medicine.";
     }
 }
 

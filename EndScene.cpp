@@ -6,16 +6,18 @@
 using namespace std;
 
 void EndScene::goodEnding(){
-    cout << "After a long day of distributing medicine to the people... you go home!" << "Congratulations, you made it." << endl;
-    cout << "You're a real pharmacist!" << endl;
+    cout << "After a long day of distributing medicine to the people... you go home! \n" 
+    << "You're a real pharmacist! \n";
 }
 
 void EndScene::badEnding(){
-    cout << "The night is impossibly dark. You wander from alleyway to alleyway, searching for your car." << endl;
-    cout << "Where is it? You wonder." << endl;
-    cout << "Your stomach hurts from the copious amounts of Panadol™ you've been taking all day... for you have ceaseless headaches that never go away." << endl;
+    cout << "The night is impossibly dark. You wander from alleyway to alleyway, searching for your car.\n" 
+    << "Where is it? You wonder.\n" 
+    << "Your stomach hurts from the copious amounts of Panadol™ you've been taking all day.\n"
+    << "If only your mother-- hey, what was that? Did you see that?\n" << endl;
     
-    // png jumpscare of a police guy
+    // insert png jumpscare of a police guy
+    // consider png++ to handle this
 
     cout << "'Hey, freeze! It's the police!'" << endl;
     cout << "Wait, what?" << endl;
