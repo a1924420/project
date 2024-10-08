@@ -18,9 +18,15 @@ void Patient::setMedicalHistory(std::string medicalHistory){
     this->medicalHistory = medicalHistory;
 }
 
-void greetingDialogue(){}
+void greetingDialogue(){
+    cout<<" Hello, I am "<<getName()<<" here to pick up my"<<  <<"my ID number is"<<endl;
+}
 
-void rightDialogue(){}
+void rightDialogue(){
+    cout<<"thank you,   "<<endl;
+}
 
-void wrongDialogue(){}
+void wrongDialogue(){
+    cout<<"..."<<endl;
+}
 
