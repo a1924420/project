@@ -15,7 +15,7 @@ class Police: public Customer{
 
     void rightDialogue();
     void wrongDialogue();
-    void arrest();
+    static void arrest();
 
 };
 

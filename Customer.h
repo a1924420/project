@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include "Person.h"
+#include "Medicine.h"
 
 class Customer: public Person{
 
@@ -34,7 +35,7 @@ class Customer: public Person{
 
     void setCorrectOrNot(bool correctOrNot);
 
-    void checker();
+    void checker(Medicine med, Patient patient);
 
     virtual void rightDialogue();
     virtual void wrongDialogue();

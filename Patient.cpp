@@ -19,14 +19,14 @@ void Patient::setMedicalHistory(std::string medicalHistory){
 }
 
 void greetingDialogue(){
-    cout<<" Hello, I am "<<getName()<<" here to pick up my"<<  <<"my ID number is"<<endl;
+    // std::cout <<" Hello, I am "<<getName()<<" here to pick up my"<<  <<"my ID number is"<<endl;
 }
 
 void rightDialogue(){
-    cout<<"thank you,   "<<endl;
+    std::cout <<"thank you,   "<< std::endl;
 }
 
 void wrongDialogue(){
-    cout<<"..."<<endl;
+    std::cout << "..." << std::endl;
 }
 

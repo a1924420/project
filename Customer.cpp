@@ -1,6 +1,7 @@
 #include "Customer.h"
 #include "Person.h"
-#inlcude "Patient.h"
+#include "Patient.h"
+#include "Medicine.h"
 
 #include <iostream>
 #include <string>
@@ -45,21 +46,21 @@ void Customer::setCorrectOrNot(bool correctOrNot) {
   this->correctOrNot = correctOrNot;
 }
 
-void checker() {
-    if (medID==Patient.getPrescriptionID()){
-        setCorrectOrNot (true);
-        rightDialogue();
+void checker(Medicine med, Patient patient){
+
+    if (med.getMedID() == patient.getPrescriptionID()){
+        patient.setCorrectOrNot(true);
+        patient.rightDialogue();
     }else{
-        setCorrectOrNot(false);
-        wrongDialogue();
+        patient.setCorrectOrNot(false);
+        patient.wrongDialogue();
     }
-    
-    }
+}
 
 
 void Customer::rightDialogue(){
-    cout<<"thank you for the medication, see you later!"<<endl;
+    std::cout <<"Thank you for the medication, see you later!"<< std::endl;
 }
 void Customer::wrongDialogue(){
-    cout<<"sorry, I dont think thats right"<<endll
+    std::cout <<"Sorry, I dont think thats right."<< std::endl;
 }
