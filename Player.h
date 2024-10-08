@@ -7,7 +7,7 @@
 
 using namespace std;
 
-class Player: public Person{
+class Player: public Person {
 
 private:
     int inventory;

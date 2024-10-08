@@ -18,7 +18,7 @@ Player::Player(string name, int age, int inventory, int score) {
     }
 
     else {
-        cout << "Name is too long!";
+        cout << "Name is too long! \n";
         this->name = "Undefined";
     }
     
@@ -28,9 +28,13 @@ Player::Player(string name, int age, int inventory, int score) {
 };
 
 // setters
-void Player::setName(string name) {
-    if (name.length() <= 12 && name.length() > 0) {
-        this->name = name;
+void Player::setName(string newName) {
+    if (newName.length() <= 12 && newName.length() > 0) {
+        this->name = newName;
+    }
+
+    else {
+        cout << "Your name must be less than 12 characters.";
     }
 };
 
@@ -41,10 +45,6 @@ void Player::setAge(int age) {
 void Player::setScore(int score) {
     this->score = score;
 };
-
-void Player::setScore(int score){
-    this->score = score;
-}
 
 void Player::setInventory(int medicine){
     // takes an id, does not need to be within bounds
@@ -78,7 +78,7 @@ void Player::takeMedicine(int medicineID){
     }
 
     else {
-        cout << "Invalid medicine.";
+        cout << "Invalid medicine. \n";
     }
 }
 
@@ -91,7 +91,7 @@ void Player::deny(){
     // gives unique dialogue
     // skipping to next customer is done in main()
 
-    cout << "Nuh-uh... that's a cop! A pig! An authority figure!" << endl
-    << "'No, officer,' you say. 'We don't sell any medicines around here. Only vapes!'" << endl
-    << "Your customer looks disgruntled and walks away." << endl;
+    cout << "Nuh-uh... that's a cop! A pig! An authority figure! \n"
+    << "'No, officer,' you say. 'We don't sell any medicines around here. Only vapes!' \n"
+    << "Your customer looks disgruntled and walks away. \n";
 }
