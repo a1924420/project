@@ -8,6 +8,7 @@ using namespace std;
 
 void Police::arrest(){
     cout << "Stop right there, you’ve been arrested for selling medication without a proper license!" << endl;
+    exit(0); // ends game at this point - ends entire code run
 }
 
 void Police::rightDialogue(){
