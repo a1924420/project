@@ -11,6 +11,7 @@ class StorageTest{
 
     public:
 
+    // Runs all tests for storage class
     void runTests(){
         testDefault();
         std::cout << "\nDefault Test Complete.\n" << std::endl;
@@ -26,12 +27,14 @@ class StorageTest{
 
     private:
 
+    // Tests the default constructor
     void testDefault(){
         Storage storage;
 
         std::cout << "Number of Medicines in Storage: " << storage.getNumOfMedicines() << std::endl;
     }
 
+    // Tests the parameterised constructor
     void testConstructor(){
         Medicine med1("Panadol", 332528, "Treats pain and reduces fever");
 
@@ -56,6 +59,7 @@ class StorageTest{
         }
     }
 
+    // Tests the getter and setter functions
     void testGettersAndSetters(){
         Medicine med1("Prolaxa", 948273, "Treats chronic digestive issues and helps regulate bowel movements");
 
@@ -84,6 +88,7 @@ class StorageTest{
         }
     }
 
+    // Tests the function used to add a medicine to the array
     void testAddMedicine(){
         Medicine med1("Panadol", 332528, "Treats pain and reduces fever");
 
@@ -130,6 +135,7 @@ class StorageTest{
         }
     }
 
+    // Tests the function used to remove a medicine from the array
     void testRemoveMedicine(){
         Medicine med1("Panadol", 332528, "Treats pain and reduces fever");
 

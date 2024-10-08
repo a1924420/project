@@ -12,6 +12,7 @@ class VisitorTest{
 
     public:
 
+    // Runs all tests for visitor class
     void runTests(){
         testDefault();
         std::cout << "\nDefault Test Complete.\n" << std::endl;
@@ -27,6 +28,7 @@ class VisitorTest{
 
     private:
 
+    // Tests the default constructor
     void testDefault(){
         Visitor visitors;
 
@@ -35,6 +37,7 @@ class VisitorTest{
 
     }
 
+    // Tests the parameterised constructor
     void testConstructor(){
         Customer c1("Alice Johnson", 28, 10234);
 
@@ -58,6 +61,7 @@ class VisitorTest{
         std::cout << "Maximum Number of Visitors: " << visitors.getMaxCapacity() << std::endl;
     }
 
+    // Tests the getter and setter functions
     void testGettersAndSetters(){
         Customer c1("Emily Davis", 22, 78901);
 
@@ -86,6 +90,7 @@ class VisitorTest{
         }
     }
 
+    // Tests the function used to add a customer to the array
     void testAddCustomer(){
         Customer c1("Emily Davis", 22, 78901);
 
@@ -130,6 +135,7 @@ class VisitorTest{
         std::cout << "Maximum Number of Visitors: " << visitors.getMaxCapacity() << std::endl;
     }
 
+    // Tests the function used to remove a customer from the array
     void testRemoveCustomer(){
         Customer c1("Emily Davis", 22, 78901);
 

@@ -9,6 +9,7 @@ class MedicineTest{
 
     public:
 
+    // Runs all tests for medicine class
     void runTests(){
         testDefault();
         std::cout << "\nDefault Test Complete.\n" << std::endl;
@@ -22,6 +23,7 @@ class MedicineTest{
 
     private:
 
+    // Tests the default constructor
     void testDefault(){
         Medicine med;
 
@@ -30,6 +32,7 @@ class MedicineTest{
         std::cout << "Medicine Description: " << med.getDescription() << std::endl;
     }
 
+    // Tests the parameterised constructor
     void testConstructor(){
         Medicine med("Panadol", 332528, "Treats pain and reduces fever");
 
@@ -38,6 +41,7 @@ class MedicineTest{
         std::cout << "Medicine Description: " << med.getDescription() << std::endl;
     }
 
+    // Tests the getter and setter functions
     void testGettersAndSetters(){
         Medicine med;
 
@@ -50,6 +54,7 @@ class MedicineTest{
         std::cout << "Medicine Description: " << med.getDescription() << std::endl;
     }
 
+    // Tests that the medicines can be modified from the default constructor
     void testModifyMedicine(){
         Medicine med;
 
