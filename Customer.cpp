@@ -1,5 +1,6 @@
 #include "Customer.h"
 #include "Person.h"
+#inlcude "Patient.h"
 
 #include <iostream>
 #include <string>
@@ -30,19 +31,35 @@ void Customer::setAge(int age){
     this->age = age;
 }
 
-int Customer::getID() { return ID; }
+int Customer::getID() { 
+    return ID;
+     }
 
-void Customer::setID(int ID) { this->ID = ID; }
+void Customer::setID(int ID) { 
+    this->ID = ID; }
 
-bool Customer::getCorrectOrNot() { return correctOrNot; }
+bool Customer::getCorrectOrNot() { 
+    return correctOrNot; }
 
 void Customer::setCorrectOrNot(bool correctOrNot) {
   this->correctOrNot = correctOrNot;
 }
 
 void checker() {
-    // if (medID == prescriptionID) -> need to include Patient.h 
-}
+    if (medID==Patient.getPrescriptionID()){
+        setCorrectOrNot (true);
+        rightDialogue();
+    }else{
+        setCorrectOrNot(false);
+        wrongDialogue();
+    }
+    
+    }
 
-void Customer::rightDialogue(){}
-void Customer::wrongDialogue(){}
+
+void Customer::rightDialogue(){
+    cout<<"thank you for the medication, see you later!"<<endl;
+}
+void Customer::wrongDialogue(){
+    cout<<"sorry, I dont think thats right"<<endll
+}
