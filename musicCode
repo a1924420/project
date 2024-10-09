@@ -1,0 +1,24 @@
+#include <SFML/Audio.hpp> // figure this out
+#include <iostream>
+
+int main() {
+    // Create a music object
+    sf::Music music;
+
+    // Load the music file (make sure the path is correct)
+    if (!music.openFromFile("music.ogg")) { // choose the music
+        std::cout << "Error loading music file" << std::endl;
+        return -1;
+    }
+
+    // Play the music
+    music.play();
+
+    // Keep the program running while the music plays
+    while (music.getStatus() == sf::Music::Playing) {
+        // You can add game logic here
+        sf::sleep(sf::seconds(0.1f)); // Sleep for a short time to avoid using 100% CPU
+    }
+
+    return 0;
+}
