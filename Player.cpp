@@ -2,6 +2,8 @@
 #include <string>
 #include "Player.h"
 
+Player::Player(): score(0), inventory(" "){}
+
 int Player::getScore(){
     return score;
 }

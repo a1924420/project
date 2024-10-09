@@ -15,6 +15,8 @@ class Player: public Person{
 
     public:
 
+    Player();
+
     std::string getName();
     
     int getAge();

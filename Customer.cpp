@@ -2,6 +2,7 @@
 #include "Person.h"
 #include "Patient.h"
 #include "Medicine.h"
+#include "Player.h"
 
 #include <iostream>
 #include <string>
@@ -46,11 +47,13 @@ void Customer::setCorrectOrNot(bool correctOrNot) {
   this->correctOrNot = correctOrNot;
 }
 
-void checker(Medicine med, Patient patient){
+void checker(Medicine med, Patient patient, Player& player){
 
     if (med.getMedID() == patient.getPrescriptionID()){
         patient.setCorrectOrNot(true);
         patient.rightDialogue();
+        int currentScore = player.getScore();  
+        player.setScore(currentScore + 10); 
     }else{
         patient.setCorrectOrNot(false);
         patient.wrongDialogue();
