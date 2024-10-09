@@ -15,6 +15,7 @@ class Customer: public Person{
 
     int ID;
     bool correctOrNot;
+    std::string illness;
 
     public:
 
@@ -26,6 +27,8 @@ class Customer: public Person{
     
     int getAge();
 
+    std::string getIllness();
+
     void setName(std::string name);
 
     void setAge(int age);
@@ -33,6 +36,8 @@ class Customer: public Person{
     int getID();
 
     void setID(int ID);
+
+    void setIllness(std::string illness);
 
     bool getCorrectOrNot();
 

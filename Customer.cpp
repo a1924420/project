@@ -25,12 +25,20 @@ int Customer::getAge(){
     return age;
 }
 
+std::string Customer::getIllness(){
+    return illness;
+}
+
 void Customer::setName(std::string name){
     this->name = name;
 }
 
 void Customer::setAge(int age){
     this->age = age;
+}
+
+void Customer::setIllness(std::string illness){
+    this->illness = illness;
 }
 
 int Customer::getID() { 
