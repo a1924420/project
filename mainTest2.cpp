@@ -65,5 +65,14 @@ int main() {
 
     prologue(user);
 
+    if (prologue(user) == true) {
+        // game loop starts...
+    }
+
+    else {
+        // game quits
+        return 0;
+    }
+
     return 0;
 }
