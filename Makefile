@@ -1,11 +1,2 @@
-endScene: EndScene.cpp EndScene.h EndSceneTest.cpp EndSceneTest.h
-	clang++ EndSceneTest.cpp EndScene.cpp  -o end_test
-
-person: Person.cpp Person.h PersonTest.cpp
-	g++ Person.cpp PersonTest.cpp -o person_test
-
-player: Player.cpp Player.h PlayerTest.cpp PlayerTest.h
-	clang++ Player.cpp PlayerTest.cpp -o player_test
-
-main: Person.cpp Person.h Player.cpp Player.h mainTest2.cpp
-	clang++ Person.cpp Player.cpp EndScene.cpp mainTest2.cpp -o main
+game_test: Customer.cpp Customer.h EndScene.cpp EndScene.h Game.cpp Game.h Medicine.cpp Medicine.h Patient.cpp Patient.h Person.cpp Person.h Player.cpp Player.h Police.cpp Police.h Storage.cpp Storage.h Visitor.h 
+	g++ Customer.cpp EndScene.cpp Game.cpp Medicine.cpp Patient.cpp Person.cpp Player.cpp Police.cpp Storage.cpp game_test.cpp -o game_test
