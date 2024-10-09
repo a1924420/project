@@ -21,6 +21,8 @@ class Customer: public Person{
 
     Customer();
 
+    Customer(std::string name, int age, int ID);
+
     Customer(std::string name, int age, int ID, std::string illness);
 
     std::string getName();
