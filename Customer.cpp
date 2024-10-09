@@ -60,7 +60,6 @@ void checker(Medicine med, Patient patient, Player& player){
     }
 }
 
-
 void Customer::rightDialogue(){
     std::cout <<"Thank you for the medication, see you later!"<< std::endl;
 }
