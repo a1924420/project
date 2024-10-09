@@ -69,7 +69,7 @@ int main() {
         // game loop starts...
     }
 
-    else {
+    else if (prologue(user) == false) {
         // game quits
         return 0;
     }
