@@ -13,7 +13,9 @@ class Police: public Customer{
 
     public:
 
+    Police();
 
+    Police(std::string name, int age, int ID, std::string illness);
 
     void rightDialogue();
     void wrongDialogue();

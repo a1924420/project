@@ -12,7 +12,7 @@ Customer::Customer(): ID(0), correctOrNot(false){
     setAge(0);
 }
 
-Customer::Customer(std::string name, int age, int ID): ID(ID), correctOrNot(false){
+Customer::Customer(std::string name, int age, int ID, std::string illness): ID(ID), correctOrNot(false), illness(illness){
     setName(name);
     setAge(age);
 }

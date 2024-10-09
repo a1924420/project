@@ -6,6 +6,20 @@
 
 using namespace std;
 
+Police::Police(){
+    setName(" ");
+    setAge(0);
+    setID(0);
+    setCorrectOrNot(false);
+}
+
+Police::Police(std::string name, int age, int ID, std::string illness){
+    setName(name);
+    setAge(age);
+    setID(ID);
+    setIllness(illness);
+}
+
 void Police::arrest(){
     cout << "Stop right there, you’ve been arrested for selling medication without a proper license!" << endl;
     exit(0); // ends game at this point - ends entire code run

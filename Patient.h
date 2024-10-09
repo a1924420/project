@@ -15,6 +15,10 @@ class Patient: public Customer{
 
     public:
 
+    Patient();
+
+    Patient(std::string name, int age, int ID, std::string illness, std::string medicalHistory, int prescriptionID);
+
     std::string getMedicalHistory();
     int getPrescriptionID();
 
