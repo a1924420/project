@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 #include "Patient.h"
+#include "Customer.h"
+#include "Person.h"
 
 std::string Patient::getMedicalHistory(){
     return medicalHistory;
@@ -18,8 +20,8 @@ void Patient::setMedicalHistory(std::string medicalHistory){
     this->medicalHistory = medicalHistory;
 }
 
-void greetingDialogue(){
-    // std::cout <<" Hello, I am "<<getName()<<" here to pick up my"<<  <<"my ID number is"<<endl;
+void greetingDialogue(Patient patient){
+    std::cout << " Hello, my name is " << patient.getName() << std::endl;
 }
 
 void rightDialogue(){

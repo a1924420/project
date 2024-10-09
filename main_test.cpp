@@ -29,10 +29,15 @@ int main(){
             std::cout << "Here are the instructions: " << std::endl;
         } else if (menu == 2){
             std::cout << "Name:         " << game.getName() << std::endl;
+            std::cin.get();
             std::cout << "Developers:   " << game.getDevelopers() << std::endl;
+            std::cin.get();
             std::cout << "Publisher:    " << game.getPublisher() << std::endl;
+            std::cin.get();
             std::cout << "Release Date: " << game.getReleaseDate() << std::endl;
+            std::cin.get();
             std::cout << "Genre:        " << game.getGenre() << std::endl;
+            std::cin.get();
             std::cout << std::endl;
         } else if (menu == 3){
             break;
@@ -55,7 +60,7 @@ int main(){
 
         std::cout << "Enter what action you would like to execute." << std::endl;
 
-        std::cin >> action;
+        std::getline(std::cin, action);
 
         if (action == "age"){
             i--;
@@ -94,7 +99,8 @@ int main(){
             std::cout << "Smoke break over, you're back in the pharmacy." << std::endl;
 
         } else {
-        std::cout << "Invalid input. Check your spelling, or enter \"menu\" to see how to play again." << std::endl;
+            std::cout << "Invalid input. Check your spelling, or enter \"menu\" to see how to play again." << std::endl;
+            i--;
         }
     }
 }

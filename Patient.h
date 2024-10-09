@@ -3,8 +3,8 @@
 
 #include <iostream>
 #include <string>
-#include "Person.h"
 #include "Customer.h"
+#include "Person.h"
 
 class Patient: public Customer{
 
@@ -21,7 +21,7 @@ class Patient: public Customer{
     void setPrescriptionID(int prescriptionID);
     void setMedicalHistory(std::string medicalHistory);
 
-    void greetingDialogue();
+    void greetingDialogue(Patient patient);
     void rightDialogue();
     void wrongDialogue();
 

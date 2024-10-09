@@ -1,8 +1,8 @@
 #include "Customer.h"
 #include "Person.h"
-#include "Patient.h"
 #include "Medicine.h"
 #include "Player.h"
+#include "Patient.h"
 
 #include <iostream>
 #include <string>
@@ -47,7 +47,7 @@ void Customer::setCorrectOrNot(bool correctOrNot) {
   this->correctOrNot = correctOrNot;
 }
 
-void checker(Medicine med, Patient patient, Player& player){
+void Customer::checker(Medicine med, Patient& patient, Player& player){
 
     if (med.getMedID() == patient.getPrescriptionID()){
         patient.setCorrectOrNot(true);
