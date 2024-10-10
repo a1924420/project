@@ -6,6 +6,10 @@
 #include <vector>
 #include "Person.h"
 #include "Customer.h"
+#include "Patient.h"
+#include "Police.h"
+#include "Medicine.h"
+#include "Player.h"
 #include "Visitor.h"
 
 class VisitorTest{
@@ -63,6 +67,7 @@ class VisitorTest{
 
     // Tests the getter and setter functions
     void testGettersAndSetters(){
+        
         Customer c1("Emily Davis", 22, 78901);
 
         Customer c2("David Smith", 40, 45321);

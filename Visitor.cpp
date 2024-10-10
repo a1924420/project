@@ -1,6 +1,10 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "Patient.h"
+#include "Police.h"
+#include "Medicine.h"
+#include "Player.h"
 #include "Visitor.h"
 #include "Customer.h"
 
