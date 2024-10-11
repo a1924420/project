@@ -1,0 +1,69 @@
+// testfile for police,
+
+#include "Person.h"
+#include "Police.h"
+#include "PoliceTest.h"
+#include <iostream>
+#include <vector>
+
+int main() {
+  PoliceTest policeTest;
+
+  policeTest.runTests();
+
+  return 0;
+}
+
+/*int main() {
+
+    Police officer1("snow", 35, 112233, "No known illnesses");
+
+    Police officer2("herb", 40, 223344, "has the Flu");
+
+    std::cout << "Officer 1 Details:" << std::endl;
+    std::cout << "Name: " << officer1.getName() << std::endl;
+    std::cout << "Age: " << officer1.getAge() << std::endl;
+    std::cout << "ID: " << officer1.getID() << std::endl;
+    std::cout << "Illness: " << officer1.getIllness() << std::endl;
+
+    std::cout << std::endl;
+
+    std::cout << "Officer 2 Details:" << std::endl;
+    std::cout << "Name: " << officer2.getName() << std::endl;
+    std::cout << "Age: " << officer2.getAge() << std::endl;
+    std::cout << "ID: " << officer2.getID() << std::endl;
+    std::cout << "Illness: " << officer2.getIllness() << std::endl;
+
+    std::cout << std::endl;
+
+    std::cout << "Testing Police Actions:" << std::endl;
+
+    officer1.rightDialogue(); // Officer lets the person go
+    officer2.wrongDialogue(); // Officer arrests the person
+
+    std::cout << "New Police Officer Added:" << std::endl;
+
+    Police officer3("Mike Johnson", 50, 334455, "No illnesses");
+    std::cout << "Officer 3 Details:" << std::endl;
+    std::cout << "Name: " << officer3.getName() << std::endl;
+    std::cout << "Age: " << officer3.getAge() << std::endl;
+    std::cout << "ID: " << officer3.getID() << std::endl;
+    std::cout << "Illness: " << officer3.getIllness() << std::endl;
+
+    std::cout << std::endl;
+
+    std::vector<Police> policeList = {officer1, officer2, officer3};
+
+    for (int i = 0; i < policeList.size(); i++) {
+        std::cout << "Police Officer " << i+1 << " Details:" << std::endl;
+        std::cout << "Name: " << policeList[i].getName() << std::endl;
+        std::cout << "Age: " << policeList[i].getAge() << std::endl;
+        std::cout << "ID: " << policeList[i].getID() << std::endl;
+        std::cout << "Illness: " << policeList[i].getIllness() << std::endl;
+    }
+
+    return 0;
+}
+*/
+
+// patient file:
