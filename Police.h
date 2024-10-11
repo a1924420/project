@@ -11,11 +11,13 @@ class Police: public Customer{
 
     private:
 
+    std::string medicalHistory;
+
     public:
 
     Police();
 
-    Police(std::string name, int age, int ID, std::string illness);
+    Police(std::string name, int age, int ID, std::string illness, std::string medicalHistory);
 
     void rightDialogue();
     void wrongDialogue();
