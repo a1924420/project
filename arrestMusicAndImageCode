@@ -84,3 +84,23 @@ void Police::wrongDialogue() {
     cout << "That's illegal!" << endl;
     arrest(); // Call the arrest function, which will display the image
 }
+
+// needs to be implemented and add the correct path// NOT DONE YET
+
+// Load the police officer image from the resources folder
+if (!policeOfficerTexture.loadFromFile("resources/police officer.png")) {
+    cerr << "Error loading police officer.png" << endl;
+    return;
+}
+
+// Load the arrest music from the resources folder
+if (!arrestMusic.openFromFile("resources/arrest_music.ogg")) {
+    cerr << "Error loading arrest_music.ogg" << endl;
+    return;
+}
+
+//git add resources/police\ officer.png resources/arrest_music.ogg
+git commit -m "Added police officer image and arrest music"
+git push
+
+
