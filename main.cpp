@@ -17,17 +17,23 @@ using namespace std;
 
 int main() {
     Game game("Backyard Pharmacy", "38 SnifferDogg Studios", "Skaghog House", "22/09/2024", "Dark Comedy");
+    int menu = 4; // default value is 4
+    bool gameState = false; // whether the player is currently in a game
 
     // open up menu at the beginning of the game
 
-    int menu = 4; // default value is 4
+    while ((menu != 3) || (gameState == false)) { // menu opened up 
+        cout << endl << "For 'How to Play': Enter 1" << endl; 
+        cout << "For 'About Game': Enter 2" << endl;
+        cout << "For 'Start Game': Enter 3" << endl;
 
-    cout << "For 'How to Play': Enter 1" << endl; 
-    cout << "For 'About Game': Enter 2" << endl;
-    cout << "For 'Start Game': Enter 3" << endl;
-
-    while (menu != 3){ // menu opened up 
         cin >> menu;
+
+        while (!(cin >> menu)) { // if input is not numerical
+            cout << "I said 1, 2, or 3. \n";
+            cin.clear();
+            cin.ignore(365, '\n');
+        }
 
         if (menu == 1) { // instructions on how to play the game
             cout << "Here be instructions: \n" 
@@ -50,62 +56,79 @@ int main() {
         } 
         
         else if (menu == 3) { // start game
+            gameState = true;
             break;
         } 
         
         else {
-            cout << "Invalid input, please enter 1, 2, or 3." << endl;
+            cout << "Error occurred in menu." << endl;
         }
     }
 
-    // game begins here
-    string name = ""; 
-    int age; 
+    while (gameState == true) {
+        // game begins here
 
-    // getting name and age from user 
-    cout << "What is your name? \n";
-    cin >> name;
+        string name = ""; 
+        int age = 0; 
+
+        // getting name and age from user 
+        cout << "What is your name? \n";
+        cin >> name;
+
+        while (name.length() > 12 || name.length() < 1) { // if name is too long/short 
+            cout << "Your name must be between 1 and 12 characters. \n";
+            cin.ignore(365, '\n');
+            cin >> name;
+        }
+        
+        cout << "What is your age? \n";
+
+        while (!(cin >> age) || (age < 0)) { // if input is not numerical or negative
+            cout << "Try again. \n";
+            cin.clear();
+            cin.ignore(365, '\n');
+        }
     
-    cout << "What is your age? \n";
-    cin >> age;
+        Player user(name, age, 0, 0);
 
-    Player user(name, age, 0, 0);
+        int answer = 2; // initialised with default value 
 
-    int answer = 2; // initialised with default value 
+        // prologue intro plays 
+        cout << "It's a beautiful day outside and you're a terrible student. \n"
+        << "Your name is " << user.getName() << " and you're " << user.getAge() << " years young. \n"
+        << "Today, you're starting your new job as a real pharmacist. \n"
+        << "What wonders will await you on your first shift? \n" 
+        << "You ponder that as you open your backdoor and enter your backyard. \n"
+        << "Which also happens to be your new workspace. \n"
+        << "That's right... you're a backyard pharmacist! \n";
 
-    // prologue intro plays 
-    cout << "It's a beautiful day outside and you're a terrible student. \n"
-    << "Your name is " << user.getName() << " and you're " << user.getAge() << " years young. \n"
-    << "Today, you're starting your new job as a real pharmacist. \n"
-    << "What wonders will await you on your first shift? \n" 
-    << "You ponder that as you open your backdoor and enter your backyard. \n"
-    << "Which also happens to be your new workspace. \n"
-    << "That's right... you're a backyard pharmacist! \n";
+        cout << "Now, are you ready to start? \n"
+        << "Type 0 for yes and 1 for no.";
 
-    cout << "Now, are you ready to start? \n"
-    << "Type 0 for yes and 1 for no.";
-
-    cin >> answer;
-
-    while (answer != 0 && answer != 1) {
-        cout << "I don't remember " << answer << " being an option I gave. Answer properly. \n";
         cin >> answer;
-    }
 
-    if (answer == 0) {
-        cout << "Great job! \n" 
-        << "Let's get you to your first customer, who's coming through the unlocked side entrance that leads directly to your kitchen now.";
-    }
+        while (!(cin >> answer) || (answer != 0 && answer != 1)) { // if input is not numerical
+            cout << "I don't remember that being an option. \n";
+            cin.clear();
+            cin.ignore(365, '\n');
+        }
 
-    else if (answer == 1) {
-        cout << "Why did you open this game then?";
-       
-        return 0;
-    }
+        if (answer == 0) {
+            cout << "Great job! \n" 
+            << "Let's get you to your first customer, who's coming through the unlocked side entrance that leads directly to your kitchen now.";
+        }
 
-    else {
-        cout << "Unknown error occurred.";
-        return 0;
+        else if (answer == 1) {
+            cout << "Why did you open this game then?";
+            return 0;
+        }
+
+        else {
+            cout << "Unknown error occurred.";
+            return 0;
+        }
+
+        gameState = false; // implement play again functionality?
     }
 
     return 0;

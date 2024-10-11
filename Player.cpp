@@ -18,7 +18,6 @@ Player::Player(string name, int age, int inventory, int score) {
     }
 
     else {
-        cout << "Name is too long! \n";
         this->name = "Undefined";
     }
     
