@@ -4,23 +4,21 @@
 #include "Customer.h"
 #include "Person.h"
 
-Patient::Patient(): medicalHistory(" "), prescriptionID(0){
+Patient::Patient(): prescriptionID(0){
     setName(" ");
     setAge(0);
     setID(0);
     setCorrectOrNot(false);
+    setMedicalHistory(" ");
 }
 
-Patient::Patient(std::string name, int age, int ID, std::string illness, std::string medicalHistory, int prescriptionID): medicalHistory(medicalHistory), prescriptionID(prescriptionID){
+Patient::Patient(std::string name, int age, int ID, std::string illness, std::string medicalHistory, int prescriptionID): prescriptionID(prescriptionID){
     setName(name);
     setAge(age);
     setID(ID);
     setCorrectOrNot(false);
     setIllness(illness);
-}
-
-std::string Patient::getMedicalHistory(){
-    return medicalHistory;
+    setMedicalHistory(medicalHistory);
 }
 
 int Patient::getPrescriptionID(){
@@ -29,10 +27,6 @@ int Patient::getPrescriptionID(){
 
 void Patient::setPrescriptionID(int prescriptionID){
     this->prescriptionID = prescriptionID;
-}
-
-void Patient::setMedicalHistory(std::string medicalHistory){
-    this->medicalHistory = medicalHistory;
 }
 
 void Patient::greetingDialogue(Patient patient){

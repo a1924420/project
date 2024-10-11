@@ -10,7 +10,6 @@ class Patient: public Customer{
 
     private:
 
-    std::string medicalHistory;
     int prescriptionID;
 
     public:
@@ -19,11 +18,9 @@ class Patient: public Customer{
 
     Patient(std::string name, int age, int ID, std::string illness, std::string medicalHistory, int prescriptionID);
 
-    std::string getMedicalHistory();
     int getPrescriptionID();
 
     void setPrescriptionID(int prescriptionID);
-    void setMedicalHistory(std::string medicalHistory);
 
     void greetingDialogue(Patient patient);
     void rightDialogue();

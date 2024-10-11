@@ -13,11 +13,12 @@ Police::Police(){
     setCorrectOrNot(false);
 }
 
-Police::Police(std::string name, int age, int ID, std::string illness){
+Police::Police(std::string name, int age, int ID, std::string illness, std::string medicalHistory){
     setName(name);
     setAge(age);
     setID(ID);
     setIllness(illness);
+    
 }
 
 void Police::arrest(){

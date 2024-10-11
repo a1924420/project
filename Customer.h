@@ -16,6 +16,7 @@ class Customer: public Person{
     int ID;
     bool correctOrNot;
     std::string illness;
+    std::string medicalHistory;
 
     public:
 
@@ -23,13 +24,15 @@ class Customer: public Person{
 
     Customer(std::string name, int age, int ID);
 
-    Customer(std::string name, int age, int ID, std::string illness);
+    Customer(std::string name, int age, int ID, std::string illness, std::string medicalHistory);
 
     std::string getName();
     
     int getAge();
 
     std::string getIllness();
+
+    std::string getMedicalHistory();
 
     void setName(std::string name);
 
@@ -40,6 +43,8 @@ class Customer: public Person{
     void setID(int ID);
 
     void setIllness(std::string illness);
+
+    void setMedicalHistory(std::string medicalHistory);
 
     bool getCorrectOrNot();
 

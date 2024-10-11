@@ -17,7 +17,8 @@ Customer::Customer(std::string name, int age, int ID): ID(ID){
     setAge(age);
 }
 
-Customer::Customer(std::string name, int age, int ID, std::string illness): ID(ID), correctOrNot(false), illness(illness){
+Customer::Customer(std::string name, int age, int ID, std::string illness, std::string medicalHistory): ID(ID), 
+correctOrNot(false), illness(illness), medicalHistory(medicalHistory){
     setName(name);
     setAge(age);
 }
@@ -34,6 +35,10 @@ std::string Customer::getIllness(){
     return illness;
 }
 
+std::string Customer::getMedicalHistory(){
+    return medicalHistory;
+}
+
 void Customer::setName(std::string name){
     this->name = name;
 }
@@ -44,6 +49,10 @@ void Customer::setAge(int age){
 
 void Customer::setIllness(std::string illness){
     this->illness = illness;
+}
+
+void Customer::setMedicalHistory(std::string medicalHistory){
+    this->medicalHistory = medicalHistory;
 }
 
 int Customer::getID() { 
