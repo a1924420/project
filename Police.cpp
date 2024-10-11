@@ -18,7 +18,8 @@ Police::Police(std::string name, int age, int ID, std::string illness, std::stri
     setAge(age);
     setID(ID);
     setIllness(illness);
-    
+    setMedicalHistory(medicalHistory);
+
 }
 
 void Police::arrest(){

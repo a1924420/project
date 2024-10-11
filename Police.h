@@ -15,7 +15,7 @@ class Police: public Customer{
 
     Police();
 
-    Police(std::string name, int age, int ID, std::string illness);
+    Police(std::string name, int age, int ID, std::string illness, std::string medicalHistory);
 
     void rightDialogue();
     void wrongDialogue();
