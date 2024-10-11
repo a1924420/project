@@ -1,0 +1,86 @@
+#include <iostream>
+#include <string>
+#include "Person.h"
+#include "Customer.h"
+#include "Police.h"
+#include <SFML/Graphics.hpp> // Include SFML graphics
+#include <SFML/Audio.hpp>
+
+using namespace std;
+
+// Default constructor
+Police::Police() {
+    setName(" ");
+    setAge(0);
+    setID(0);
+    setCorrectOrNot(false);
+}
+
+// Parameterized constructor
+Police::Police(std::string name, int age, int ID, std::string illness, std::string medicalHistory) {
+    setName(name);
+    setAge(age);
+    setID(ID);
+    setIllness(illness);
+    setMedicalHistory(medicalHistory);
+}
+
+// Display the arrest message and show the police officer image
+void Police::arrest() {
+    cout << "Stop right there, you’ve been arrested for selling medication without a proper license!" << endl;
+
+    // Create a window to display the arrest image
+    sf::RenderWindow window(sf::VideoMode(800, 600), "Arrested!");
+
+    // Load the police officer texture and create a sprite
+    sf::Texture policeOfficerTexture;
+    if (!policeOfficerTexture.loadFromFile("police officer.png")) {
+        cerr << "Error loading police officer.png" << endl;
+        return; // Exit if the image cannot be loaded
+    }
+    sf::Sprite policeOfficerSprite(policeOfficerTexture);
+
+ sf::Music arrestMusic;
+    if (!arrestMusic.openFromFile("arrest_music.ogg")) {  // Make sure to provide a valid sound file path
+        cerr << "Error loading arrest_music.ogg" << endl;
+        return; // Exit if the sound cannot be loaded
+    }
+    
+    // Play the music or sound effect
+    arrestMusic.play();
+
+
+
+    // Main loop for the window to display the arrest image
+    while (window.isOpen()) {
+        sf::Event event;
+        while (window.pollEvent(event)) {
+            if (event.type == sf::Event::Closed)
+                window.close();
+        }
+        
+
+        // Clear the window
+        window.clear(sf::Color::Black);
+
+        // Draw the police officer sprite
+        window.draw(policeOfficerSprite);
+
+        // Display the contents of the window
+        window.display();
+    }
+
+    exit(0); // End the game (or program) after showing the image
+}
+
+// Dialogue for a correct action
+void Police::rightDialogue() {
+    cout << "Hmm okay, have a good day" << endl;
+}
+
+// Dialogue for a wrong action, leading to an arrest
+void Police::wrongDialogue() {
+    cout << "Wait, so you do sell medicine here?" << endl;
+    cout << "That's illegal!" << endl;
+    arrest(); // Call the arrest function, which will display the image
+}
