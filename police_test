@@ -43,7 +43,7 @@ int main() {
 
     std::cout << "New Police Officer Added:" << std::endl;
 
-    Police officer3("Mike Johnson", 50, 334455, "No illnesses");
+    Police officer3("spice ", 50, 334455, "No illnesses");
     std::cout << "Officer 3 Details:" << std::endl;
     std::cout << "Name: " << officer3.getName() << std::endl;
     std::cout << "Age: " << officer3.getAge() << std::endl;
