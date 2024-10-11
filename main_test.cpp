@@ -53,15 +53,13 @@ int main(){
 
     // Customer 1 introduction
 
-    // Do we want this loop to be made into the player dialogue function?
-
     Patient p1("Piper", 15, 1, "My head feels like it’s going to explode! I’m in so much pain! HELP ME!!!", "Mild headaches and hypochondria.", 1);
 
     Patient p2("Tai", 0, 2, "I swear I’m always panicking, please get me something that’ll calm me down, quick!", "Self-diagnosed severe anxiety disorder, and self-diagnosed everything really.", 2);
 
     Patient p3("Doop-Snogg", 52, 3, "You got that good stuff to chill, fam?", "Mild cough, but it ain’t miss Mary Jane’s fault ya feel me dawg", 3);
 
-    Police officer1("Snow", 30, 0, "I’m just really sad all the time, I might be Depressed.", "Previously broke right  arm due to accident");
+    Police officer1("Snow", 30, 0, "I’m just really sad all the time, I might be depressed.", "Previously broke right arm due to accident");
 
     Police officer2("Herb", 78, 0, "I feel really dizzy when I stand and I’m cold all the time" , "None");
 
@@ -80,6 +78,20 @@ int main(){
     visitors.addCustomer(officer2);
 
     visitors.addCustomer(officer3);
+
+    Medicine med1("Panadol", 1, "Treats pain and reduces fever");
+
+    Medicine med2("Xanax", 2, "Treats anxiety");
+
+    Medicine med3("Fluoxetine",3, "Antidepressesant");
+
+    Storage storage(5);
+    
+    storage.addMedicine(med1);
+
+    storage.addMedicine(med2);
+
+    storage.addMedicine(med3);
 
     for (int i = 0; i < visitors.getCurrentCapacity(); i++){
         Customer customer = visitors.getVisitors()[i];
@@ -115,19 +127,31 @@ int main(){
                 std::cout << customer.getMedicalHistory() << std::endl;
                 i--;
             } else if (action == "storage"){
+                for (int i = 0; i < storage.getNumOfMedicines(); i++){
+                    Medicine med = storage.getMedicines()[i];
+                    std::cout << "Medicine " << i+1 << ":" << std::endl;
+                    std::cout << "Name: " << med.getMedName() << std::endl;
+                    std::cout << "Description: " << med.getDescription() << "\n" << std::endl;
+                }
                 i--;
             } else if (action == "sell"){
                 if (customer.getID() == 0){
-                    // police wrong dialogue
+                    Police police;
+                    customer = police;
+                    police.wrongDialogue();
                 } else {
                     // user must select medicine and call checker
                 }
                 break;
             } else if (action == "deny"){
                 if (customer.getID() == 0){
-                    // customer.rightDialogue();
+                    Police police;
+                    customer = police;
+                    police.rightDialogue();
                 } else {
-                    //customer.wrongDialogue();
+                    Patient patient;
+                    customer = patient;
+                    patient.wrongDialogue();
                 }
                 break;
             } else if (action == "menu"){

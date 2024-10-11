@@ -83,7 +83,7 @@ void Customer::checker(Medicine med, Patient& patient, Player& player){
 }
 
 void Customer::greetingDialogue(Customer customer){
-    std::cout << " Hello, my name is " << customer.getName() << ", and I'm here to collect some medicine." << std::endl;
+    std::cout << "Hello, my name is " << customer.getName() << ", and I'm here to collect some medicine." << std::endl;
 }
 
 void Customer::rightDialogue(){

@@ -34,6 +34,6 @@ void Patient::rightDialogue(){
 }
 
 void Patient::wrongDialogue(){
-    std::cout << "This is not what I wanted, you suck at your job!" << std::endl;
+    std::cout << "Are you serious? you suck at your job!" << std::endl;
 }
 
