@@ -52,6 +52,8 @@ class Customer: public Person{
 
     void checker(Medicine med, Patient& patient, Player& player);
 
+    void greetingDialogue(Customer customer);
+
     virtual void rightDialogue();
     virtual void wrongDialogue();
 

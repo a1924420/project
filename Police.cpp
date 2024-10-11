@@ -31,6 +31,7 @@ void Police::rightDialogue(){
     cout << "Hmm okay, have a good day" << endl;
 }
 void Police::wrongDialogue(){
-    cout << "This isn't right" << endl;
+    cout << "Wait, so you do sell medicine here?" << endl;
+    cout << "That's illegal!" << endl;
     arrest();
 }

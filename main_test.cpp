@@ -57,7 +57,7 @@ int main(){
 
     Patient p1("Piper", 15, 1, "My head feels like it’s going to explode! I’m in so much pain! HELP ME!!!", "Mild headaches and hypochondria.", 1);
 
-    Patient p2("Tai", 43, 2, "I swear I’m always panicking, please get me something that’ll calm me down, quick!", "Self-diagnosed severe anxiety disorder, and self-diagnosed everything really.", 2);
+    Patient p2("Tai", 0, 2, "I swear I’m always panicking, please get me something that’ll calm me down, quick!", "Self-diagnosed severe anxiety disorder, and self-diagnosed everything really.", 2);
 
     Patient p3("Doop-Snogg", 52, 3, "You got that good stuff to chill, fam?", "Mild cough, but it ain’t miss Mary Jane’s fault ya feel me dawg", 3);
 
@@ -87,53 +87,81 @@ int main(){
         std::cout << customer.getIllness() << "\n" << std::endl;
     }
 
-    for (int i = 0; i < 1; i++){
+    for (int i = 0; i < visitors.getCurrentCapacity(); i++){
+        Customer customer = visitors.getVisitors()[i];
+        
+        customer.greetingDialogue(customer);
 
-        std::string action;
+        std::cout << customer.getIllness() << std::endl;
 
-        std::cout << "Enter what action you would like to execute." << std::endl;
+        // Tell user how to play here
 
-        std::getline(std::cin, action);
+        for (int i = 0; i < 1; i++){
 
-        if (action == "age"){
-            i--;
-        } else if (action == "medical history"){
-            i--;
-        } else if (action == "sell"){
-            break;
-        } else if (action == "deny"){
-            break;
-        } else if (action == "menu"){
-            int menu;
+            std::string action;
 
-            while (menu != 3){
-            std::cout << "For 'How to Play': Enter 1" << std::endl;
-            std::cout << "For 'About Game': Enter 2" << std::endl;
-            std::cout << "To return to game: Enter 3" << std::endl;
+            std::cout << "Enter what action you would like to execute." << std::endl;
 
-            std::cin >> menu;
+            std::getline(std::cin, action);
 
-            if (menu == 1){
-                std::cout << "Here are the instructions: " << std::endl;
-            } else if (menu == 2){
-                std::cout << "Name:         " << game.getName() << std::endl;
-                std::cout << "Developers:   " << game.getDevelopers() << std::endl;
-                std::cout << "Publisher:    " << game.getPublisher() << std::endl;
-                std::cout << "Release Date: " << game.getReleaseDate() << std::endl;
-                std::cout << "Genre:        " << game.getGenre() << std::endl;
-                std::cout << std::endl;
-            } else if (menu == 3){
+            if (action == "age"){
+                if (customer.getAge() == 0){
+                    std::cout << "That's not a nice question to ask! Do you think I look old!" << std::endl;
+                } else {
+                    std::cout << "My age is " << customer.getAge() << std::endl;
+                }
                 i--;
+            } else if (action == "medical history"){
+                std::cout << customer.getMedicalHistory() << std::endl;
+                i--;
+            } else if (action == "storage"){
+                i--;
+            } else if (action == "sell"){
+                if (customer.getID() == 0){
+                    // police wrong dialogue
+                } else {
+                    // user must select medicine and call checker
+                }
+                break;
+            } else if (action == "deny"){
+                if (customer.getID() == 0){
+                    // customer.rightDialogue();
+                } else {
+                    //customer.wrongDialogue();
+                }
+                break;
+            } else if (action == "menu"){
+                int menu;
+
+                while (menu != 3){
+                std::cout << "For 'How to Play': Enter 1" << std::endl;
+                std::cout << "For 'About Game': Enter 2" << std::endl;
+                std::cout << "To return to game: Enter 3" << std::endl;
+
+                std::cin >> menu;
+
+                if (menu == 1){
+                    std::cout << "Here are the instructions: " << std::endl;
+                } else if (menu == 2){
+                    std::cout << "Name:         " << game.getName() << std::endl;
+                    std::cout << "Developers:   " << game.getDevelopers() << std::endl;
+                    std::cout << "Publisher:    " << game.getPublisher() << std::endl;
+                    std::cout << "Release Date: " << game.getReleaseDate() << std::endl;
+                    std::cout << "Genre:        " << game.getGenre() << std::endl;
+                    std::cout << std::endl;
+                } else if (menu == 3){
+                    i--;
+                } else {
+                    std::cout << "Invalid input, please enter 1, 2 or 3: " << std::endl;
+                }
+                }
+
+                std::cout << "Smoke break over, you're back in the pharmacy." << std::endl;
+
             } else {
-                std::cout << "Invalid input, please enter 1, 2 or 3: " << std::endl;
+                std::cout << "Invalid input. Check your spelling, or enter \"menu\" to see how to play again." << std::endl;
+                i--;
             }
-            }
-
-            std::cout << "Smoke break over, you're back in the pharmacy." << std::endl;
-
-        } else {
-            std::cout << "Invalid input. Check your spelling, or enter \"menu\" to see how to play again." << std::endl;
-            i--;
         }
     }
 }

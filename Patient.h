@@ -22,7 +22,6 @@ class Patient: public Customer{
 
     void setPrescriptionID(int prescriptionID);
 
-    void greetingDialogue(Patient patient);
     void rightDialogue();
     void wrongDialogue();
 
