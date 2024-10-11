@@ -5,7 +5,7 @@
 #include "PoliceTest.h"
 #include <iostream>
 #include <vector>
-
+using namespace std;
 int main() {
   PoliceTest policeTest;
 
@@ -20,46 +20,46 @@ int main() {
 
     Police officer2("herb", 40, 223344, "has the Flu");
 
-    std::cout << "Officer 1 Details:" << std::endl;
-    std::cout << "Name: " << officer1.getName() << std::endl;
-    std::cout << "Age: " << officer1.getAge() << std::endl;
-    std::cout << "ID: " << officer1.getID() << std::endl;
-    std::cout << "Illness: " << officer1.getIllness() << std::endl;
+    cout << "Officer 1 Details:" << endl;
+    cout << "Name: " << officer1.getName() << endl;
+    cout << "Age: " << officer1.getAge() << endl;
+    cout << "ID: " << officer1.getID() << endl;
+    cout << "Illness: " << officer1.getIllness() << endl;
 
-    std::cout << std::endl;
+    cout << endl;
 
-    std::cout << "Officer 2 Details:" << std::endl;
-    std::cout << "Name: " << officer2.getName() << std::endl;
-    std::cout << "Age: " << officer2.getAge() << std::endl;
-    std::cout << "ID: " << officer2.getID() << std::endl;
-    std::cout << "Illness: " << officer2.getIllness() << std::endl;
+    cout << "Officer 2 Details:" << endl;
+   std::cout << "Name: " << officer2.getName() << endl;
+    cout << "Age: " << officer2.getAge() << endl;
+    cout << "ID: " << officer2.getID() << endl;
+    cout << "Illness: " << officer2.getIllness() << endl;
 
-    std::cout << std::endl;
+    cout << endl;
 
-    std::cout << "Testing Police Actions:" << std::endl;
+    cout << "Testing Police Actions:" << endl;
 
-    officer1.rightDialogue(); // Officer lets the person go
-    officer2.wrongDialogue(); // Officer arrests the person
+    officer1.rightDialogue(); // police officer leaves
+   officer2.wrongDialogue(); // officer arrest the player
 
-    std::cout << "New Police Officer Added:" << std::endl;
+   cout<< "New Police Officer Added:" <<endl;
 
-    Police officer3("spice ", 50, 334455, "No illnesses");
-    std::cout << "Officer 3 Details:" << std::endl;
-    std::cout << "Name: " << officer3.getName() << std::endl;
-    std::cout << "Age: " << officer3.getAge() << std::endl;
-    std::cout << "ID: " << officer3.getID() << std::endl;
-    std::cout << "Illness: " << officer3.getIllness() << std::endl;
+    Police officer3("spice ", 50, 334455, "Broken leg");
+    cout << "Officer 3 Details:" << endl;
+  cout << "Name: " << officer3.getName() << endl;
+    cout << "Age: " << officer3.getAge() << endl;
+    cout << "ID: " << officer3.getID() << endl;
+    cout << "Illness: " << officer3.getIllness() << endl;
 
-    std::cout << std::endl;
+    cout << endl;
 
-    std::vector<Police> policeList = {officer1, officer2, officer3};
+    vector<Police> policeList = {officer1, officer2, officer3};
 
     for (int i = 0; i < policeList.size(); i++) {
-        std::cout << "Police Officer " << i+1 << " Details:" << std::endl;
-        std::cout << "Name: " << policeList[i].getName() << std::endl;
-        std::cout << "Age: " << policeList[i].getAge() << std::endl;
-        std::cout << "ID: " << policeList[i].getID() << std::endl;
-        std::cout << "Illness: " << policeList[i].getIllness() << std::endl;
+        cout << "Police Officer " << i+1 << " Details:" << endl
+        cout << "Name: " << policeList[i].getName() << endl;
+        cout << "Age: " << policeList[i].getAge() << endl;
+        cout << "ID: " << policeList[i].getID() << endl;
+        cout << "Illness: " << policeList[i].getIllness() << endl;
     }
 
     return 0;
