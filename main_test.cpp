@@ -7,6 +7,7 @@
 #include "Medicine.h"
 #include "Storage.h"
 #include "EndScene.h"
+#include "Visitor.h"
 
 #include <iostream>
 #include <string>
@@ -53,6 +54,38 @@ int main(){
     // Customer 1 introduction
 
     // Do we want this loop to be made into the player dialogue function?
+
+    Patient p1("Piper", 15, 1, "My head feels like it’s going to explode! I’m in so much pain! HELP ME!!!", "Mild headaches and hypochondria.", 1);
+
+    Patient p2("Tai", 43, 2, "I swear I’m always panicking, please get me something that’ll calm me down, quick!", "Self-diagnosed severe anxiety disorder, and self-diagnosed everything really.", 2);
+
+    Patient p3("Doop-Snogg", 52, 3, "You got that good stuff to chill, fam?", "Mild cough, but it ain’t miss Mary Jane’s fault ya feel me dawg", 3);
+
+    Police officer1("Snow", 30, 0, "I’m just really sad all the time, I might be Depressed.", "Previously broke right  arm due to accident");
+
+    Police officer2("Herb", 78, 0, "I feel really dizzy when I stand and I’m cold all the time" , "None");
+
+    Police officer3("Spice", 17, 0, "High cholesterol levels.", "Has family history of high cholesterol and heart attacks.");
+
+    Visitor visitors(0, 8);
+
+    visitors.addCustomer(p1);
+
+    visitors.addCustomer(p2);
+
+    visitors.addCustomer(p3);
+
+    visitors.addCustomer(officer1);
+
+    visitors.addCustomer(officer2);
+
+    visitors.addCustomer(officer3);
+
+    for (int i = 0; i < visitors.getCurrentCapacity(); i++){
+        Customer customer = visitors.getVisitors()[i];
+        std::cout << customer.getName() << std::endl;
+        std::cout << customer.getIllness() << "\n" << std::endl;
+    }
 
     for (int i = 0; i < 1; i++){
 
