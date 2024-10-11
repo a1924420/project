@@ -48,7 +48,7 @@ void Customer::setIllness(std::string illness){
 
 int Customer::getID() { 
     return ID;
-     }
+}
 
 void Customer::setID(int ID) { 
     this->ID = ID; }
