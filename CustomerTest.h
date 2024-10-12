@@ -1,21 +1,17 @@
 #ifndef CUSTOMERTEST_H
 #define CUSTOMERTEST_H
 
-#include <iostream>
-#include <string>
-#include "Person.h"
+#include "Customer.h"
+#include "Patient.h"
 #include "Medicine.h"
 #include "Player.h"
+#include <iostream>
+#include <string>
 
+// Test functions declarations
+void testDefaultConstructor();
+void testParameterizedConstructor();
+void testGettersAndSetters();
+void testChecker();
 
-class CustomerTest{
-private:
-int ID;
-    bool correctOrNot;
-    std::string illness;
-    std::string medicalHistory;
-public:
-
-
-};
 #endif
