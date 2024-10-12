@@ -69,7 +69,7 @@ void Customer::setCorrectOrNot(bool correctOrNot) {
   this->correctOrNot = correctOrNot;
 }
 
-void Customer::checker(Medicine med, Patient& patient, Player& player){
+void Customer::checker(Medicine med, Patient patient, Player player){
 
     if (med.getMedID() == patient.getPrescriptionID()){
         patient.setCorrectOrNot(true);

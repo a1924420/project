@@ -50,7 +50,7 @@ class Customer: public Person{
 
     void setCorrectOrNot(bool correctOrNot);
 
-    void checker(Medicine med, Patient& patient, Player& player);
+    void checker(Medicine med, Patient patient, Player player);
 
     void greetingDialogue(Customer customer);
 

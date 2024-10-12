@@ -49,6 +49,29 @@ int main(){
 
     std::cout << "The game has begun." << std::endl;
 
+    string name = ""; 
+    int age = 0; 
+
+    // getting name and age from user 
+        cout << "What is your name? \n";
+        cin >> name;
+
+        while (name.length() > 12 || name.length() < 1) { // if name is too long/short 
+            cout << "Your name must be between 1 and 12 characters. \n";
+            cin.ignore(365, '\n');
+            cin >> name;
+        }
+        
+        cout << "What is your age? \n";
+
+        while (!(cin >> age) || (age < 0)) { // if input is not numerical or negative
+            cout << "Try again. \n";
+            cin.clear();
+            cin.ignore(365, '\n');
+        }
+    
+        Player user(name, age, 0, 0);
+
     std::cout << "Customer 1 enters." << std::endl;
 
     // Customer 1 introduction
@@ -140,17 +163,26 @@ int main(){
                     customer = police;
                     police.wrongDialogue();
                 } else {
-                    Patient patient;
-                    customer = patient;
-
                     std::string med;
                     std::cout << "Which medicine are you selling to this patient?" << std::endl;
                     std::getline(std::cin, med);
 
-                    if (med == "medicine 1"){
-                        
-                    }
+                    Patient patient;
 
+                    customer = patient;
+                    
+                    if (med == "medicine 1"){
+                        customer.checker(med1, patient, user);
+                    } else if (med == "medicine 2"){
+                        customer.checker(med2, patient, user);
+                    } else if (med == "medicine 3"){
+                        customer.checker(med3, patient, user);
+                   /* } else if (med == "medicine 4"){
+                        customer.checker(med1, patient, user);
+                    } else if (med == "medicine 5"){
+                        customer.checker(med1, patient, user);
+                    }*/
+                    }  
                 }
                 
             } else if (action == "deny"){
