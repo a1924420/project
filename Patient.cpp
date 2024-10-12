@@ -30,10 +30,9 @@ void Patient::setPrescriptionID(int prescriptionID){
 }
 
 void Patient::rightDialogue(){
-    std::cout <<"Thank you, just what I wanted!"<< std::endl;
+    std::cout <<"Thank you for the medication, see you later!"<< std::endl;
 }
-
 void Patient::wrongDialogue(){
-    std::cout << "Are you serious? you suck at your job!" << std::endl;
+    std::cout <<"Seriously? You suck at your job."<< std::endl;
 }
 

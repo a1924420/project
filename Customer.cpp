@@ -86,9 +86,4 @@ void Customer::greetingDialogue(Customer customer){
     std::cout << "Hello, my name is " << customer.getName() << ", and I'm here to collect some medicine." << std::endl;
 }
 
-void Customer::rightDialogue(){
-    std::cout <<"Thank you for the medication, see you later!"<< std::endl;
-}
-void Customer::wrongDialogue(){
-    std::cout <<"Sorry, I dont think thats right."<< std::endl;
-}
+

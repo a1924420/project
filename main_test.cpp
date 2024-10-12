@@ -140,9 +140,19 @@ int main(){
                     customer = police;
                     police.wrongDialogue();
                 } else {
-                    // user must select medicine and call checker
+                    Patient patient;
+                    customer = patient;
+
+                    std::string med;
+                    std::cout << "Which medicine are you selling to this patient?" << std::endl;
+                    std::getline(std::cin, med);
+
+                    if (med == "medicine 1"){
+                        
+                    }
+
                 }
-                break;
+                
             } else if (action == "deny"){
                 if (customer.getID() == 0){
                     Police police;
@@ -153,7 +163,6 @@ int main(){
                     customer = patient;
                     patient.wrongDialogue();
                 }
-                break;
             } else if (action == "menu"){
                 int menu;
 

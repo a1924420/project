@@ -143,7 +143,7 @@ class StorageTest{
 
         Medicine med3("Adderall", 4036383, "Increases focus and controls behaviour problems");
 
-        Storage storage(3);
+        Storage storage;
 
         storage.addMedicine(med1);
 
