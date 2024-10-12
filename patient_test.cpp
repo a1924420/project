@@ -13,14 +13,13 @@ int main() {
 }
 
 int main() {
-  patient patient1("Eren Jaeger", 19, 12345, "anxiety",
-                   " had a broken arm due to accident", 09876);
+  patient patient1("Eren Jaeger", 19, 12345, "anxiety", " had a broken arm due to accident", 09876);
 
   patient patient2("armin arlet", 18, 2222, "low iron", " none", 64983);
 
   cout << "patient details:" << endl;
 
-  cout << "name" << patient1.getName() << endl;
+  cout << "name:" << patient1.getName() << endl;
 
   cout << "age: " << patient1.getAge() << endl;
   cout << "ID: " << patient1.getID() << endl;
@@ -32,7 +31,7 @@ int main() {
 
   cout << "patient details:" << endl;
 
-  cout << "name" << patient2.getName() << endl;
+  cout << "name:" << patient2.getName() << endl;
 
   cout << "age: " << patient2.getAge() << endl;
   cout << "ID: " << patient2.getID() << endl;
