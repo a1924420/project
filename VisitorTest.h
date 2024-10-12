@@ -54,7 +54,7 @@ class VisitorTest{
         visitors.addCustomer(c2);
 
         for (int i = 0; i < visitors.getCurrentCapacity(); i++){
-            Customer customer = visitors.getVisitors()[i];
+            Customer customer = visitors.getVisitors()->at(i);
             std::cout << "Customer " << i+1 << ":" << std::endl;
             std::cout << "Name: " << customer.getName() << std::endl;
             std::cout << "ID Number: " << customer.getAge() << std::endl;
@@ -87,7 +87,7 @@ class VisitorTest{
         std::cout << "Maximum Number of Visitors: " << visitors.getMaxCapacity() << std::endl;
 
         for (int i = 0; i < visitors.getCurrentCapacity(); i++){
-            Customer customer = visitors.getVisitors()[i];
+            Customer customer = visitors.getVisitors()->at(i);
             std::cout << "Customer " << i+1 << ":" << std::endl;
             std::cout << "Name: " << customer.getName() << std::endl;
             std::cout << "ID Number: " << customer.getAge() << std::endl;
@@ -108,7 +108,7 @@ class VisitorTest{
         visitors.addCustomer(c2);
 
         for (int i = 0; i < visitors.getCurrentCapacity(); i++){
-            Customer customer = visitors.getVisitors()[i];
+            Customer customer = visitors.getVisitors()->at(i);
             std::cout << "Customer " << i+1 << ":" << std::endl;
             std::cout << "Name: " << customer.getName() << std::endl;
             std::cout << "ID Number: " << customer.getAge() << std::endl;
@@ -129,7 +129,7 @@ class VisitorTest{
         visitors.addCustomer(c3);
 
         for (int i = 0; i < visitors.getCurrentCapacity(); i++){
-            Customer customer = visitors.getVisitors()[i];
+            Customer customer = visitors.getVisitors()->at(i);
             std::cout << "Customer " << i+1 << ":" << std::endl;
             std::cout << "Name: " << customer.getName() << std::endl;
             std::cout << "ID Number: " << customer.getAge() << std::endl;
@@ -157,7 +157,7 @@ class VisitorTest{
         visitors.addCustomer(c3);
 
         for (int i = 0; i < visitors.getCurrentCapacity(); i++){
-            Customer customer = visitors.getVisitors()[i];
+            Customer customer = visitors.getVisitors()->at(i);
             std::cout << "Customer " << i+1 << ":" << std::endl;
             std::cout << "Name: " << customer.getName() << std::endl;
             std::cout << "ID Number: " << customer.getAge() << std::endl;
@@ -176,7 +176,7 @@ class VisitorTest{
         std::cout << std::endl;
 
         for (int i = 0; i < visitors.getCurrentCapacity(); i++){
-            Customer customer = visitors.getVisitors()[i];
+            Customer customer = visitors.getVisitors()->at(i);
             std::cout << "Customer " << i+1 << ":" << std::endl;
             std::cout << "Name: " << customer.getName() << std::endl;
             std::cout << "ID Number: " << customer.getAge() << std::endl;

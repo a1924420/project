@@ -94,13 +94,13 @@ int main(){
     storage.addMedicine(med3);
 
     for (int i = 0; i < visitors.getCurrentCapacity(); i++){
-        Customer customer = visitors.getVisitors()[i];
+        Customer customer = visitors.getVisitors()->at(i);
         std::cout << customer.getName() << std::endl;
         std::cout << customer.getIllness() << "\n" << std::endl;
     }
 
     for (int i = 0; i < visitors.getCurrentCapacity(); i++){
-        Customer customer = visitors.getVisitors()[i];
+        Customer customer = visitors.getVisitors()->at(i);
         
         customer.greetingDialogue(customer);
 

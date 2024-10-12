@@ -45,8 +45,10 @@ void Storage::setMedicines(std::vector<Medicine>& medicines){
 // @param med: new medicine being added to storage
 void Storage::addMedicine(Medicine med){
 
-    // Add the medicine to the medicines vector
+    // Dynamically allocating new Medicine object for addition
     Medicine* newMed = new Medicine(med);
+
+    // Adding medicine object to the array
     medicines->push_back(*newMed);
 
     // Update the number of medicines in storage to match the current vector size
@@ -60,9 +62,8 @@ void Storage::addMedicine(Medicine med){
 // @param med: medicine being removed from storage, identified by its ID number
 void Storage::removeMedicine(Medicine med){
 
+    // Dynamically allocating new Medicine object for removal
     Medicine* medToRemove = new Medicine(med);
-
-
 
     // Creating a new vector to hold medicines that will remain after one is removed
     std::vector<Medicine> newMedicines;

@@ -10,11 +10,11 @@
 
 // Default constructor
 // Initialises visitor with both current and maximum capacity at zero
-Visitor::Visitor(): currentCapacity(0), maxCapacity(0){}
+Visitor::Visitor(): currentCapacity(0), maxCapacity(0), visitors(new std::vector<Customer>()){}
 
 // Parameterised constructor
 // Initialises visitor with a given number for both current and maximum capacity
-Visitor::Visitor(int currentCapacity, int maxCapacity): currentCapacity(currentCapacity), maxCapacity(maxCapacity) {}
+Visitor::Visitor(int currentCapacity, int maxCapacity): currentCapacity(currentCapacity), maxCapacity(maxCapacity), visitors(new std::vector<Customer>()) {}
 
 // Getter for the current capacity of customers in the visitors array
 // @return: returns the integer of the current capacity of customers in the visitors array
@@ -26,7 +26,7 @@ int Visitor::getMaxCapacity(){ return maxCapacity; }
 
 // Getter for the list of customers in the visitors array
 // @return: returns the list of customers in the visitors array
-std::vector<Customer> Visitor::getVisitors(){ return visitors; }
+std::vector<Customer>* Visitor::getVisitors(){ return visitors; }
 
 // Setter for the current capacity of customers in the visitors array 
 // @param currentCapacity: new current capacity of customers in the visitors array
@@ -42,9 +42,9 @@ void Visitor::setMaxCapacity(int maxCapacity){
 
 // Setter for the list of customers in the visitors array
 // @param visitors: new list of customers in the visitors array
-void Visitor::setVisitors(std::vector<Customer> visitors){
-    this->visitors = visitors;
-    currentCapacity = visitors.size();
+void Visitor::setVisitors(std::vector<Customer>& visitors){
+    *(this->visitors) = visitors;
+    currentCapacity = this->visitors->size();
 }
 
 // Adds a new customer to the visitors array
@@ -54,9 +54,12 @@ void Visitor::addCustomer(Customer customer){
     // Loop to add customer to visitors array
     if (currentCapacity < maxCapacity){
         // Add the customer to the visitors array
-        visitors.push_back(customer);
+        Customer* newCustomer = new Customer(customer);
+        visitors->push_back(*newCustomer);
         // Updates current capacity when customer is added
-        currentCapacity++;
+        currentCapacity = visitors->size();
+        // Deleting newCustomer as content is already copied to vector
+        delete newCustomer; 
     } else {
         std::cout << "Cannot add more customers. Max capacity reached." << std::endl;
     }
@@ -74,14 +77,14 @@ void Visitor::removeCustomer(Customer customer){
     for (int i = 0; i < currentCapacity; i++){
 
         // Add the customer to the new vector if their ID does not match that of the customer being removed
-        if (visitors[i].getID() != customer.getID()){
-            newVisitors.push_back(visitors[i]);
+        if (visitors->at(i).getID() != customer.getID()){
+            newVisitors.push_back(visitors->at(i));
         }
     }
 
     // Replace the current customers list with the new list excluding the removed customer
-    visitors = newVisitors;
+    *visitors = newVisitors;
 
     // Update the current capacity of customers in the visitors array to match the current vector size
-    currentCapacity = visitors.size();
+    currentCapacity = visitors->size();
 }

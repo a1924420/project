@@ -19,7 +19,7 @@ class Visitor{
     // Private variables used to store the visitor's details
     int currentCapacity; // The current capacity of customers the pharmacy can hold
     int maxCapacity; // The maximum capacity of customers the pharmacy can hold
-    std::vector<Customer> visitors; // The array of customers that visit the pharmacy
+    std::vector<Customer>* visitors; // The array of customers that visit the pharmacy
 
     public:
 
@@ -40,7 +40,7 @@ class Visitor{
     int getMaxCapacity();
 
     // Returns the list of customers in the visitors array
-    std::vector<Customer> getVisitors();
+    std::vector<Customer>* getVisitors();
 
     // Setter functions to modify private variables
 
@@ -51,7 +51,7 @@ class Visitor{
     void setMaxCapacity(int maxCapacity);
 
     // Sets the list of customers in the visitors array
-    void setVisitors(std::vector<Customer> visitors);
+    void setVisitors(std::vector<Customer>& visitors);
 
     // Adds a new customer to the visitors array
     void addCustomer(Customer customer);
