@@ -228,4 +228,14 @@ int main(){
             }
         }
     }
+
+    std::cout << "It's now the end of your busy working day." << std::endl;
+
+    EndScene endscene;
+
+    if (user.getScore() >= 40){
+        endscene.goodEnding();
+    } else {
+        endscene.badEnding();
+    }
 }
