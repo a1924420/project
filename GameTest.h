@@ -27,27 +27,49 @@ class GameTest{
     void testDefault(){
         Game game;
 
+        bool passed = true;
+
         std::cout << "Name: " << game.getName() << std::endl;
         std::cout << "Developers: " << game.getDevelopers() << std::endl;
         std::cout << "Publisher: " << game.getPublisher() << std::endl;
         std::cout << "Release Date: " << game.getReleaseDate() << std::endl;
         std::cout << "Genre: " << game.getGenre() << std::endl;
+
+        passed &= equalOrNot(game.getName(), " ");
+        passed &= equalOrNot(game.getDevelopers(), " ");
+        passed &= equalOrNot(game.getPublisher(), " ");
+        passed &= equalOrNot(game.getReleaseDate(), " ");
+        passed &= equalOrNot(game.getGenre(), " ");
+
+        std::cout << (passed ? "Test passed." : "Test failed.") << std::endl;
     }
 
     // Tests the parameterised constructor
     void testConstructor(){
         Game game("Backyard Pharmacy", "38 SnifferDogg Studios", "420° Entertainment", "22/09/2024", "Dark Comedy");
 
+        bool passed = true;
+
         std::cout << "Name: " << game.getName() << std::endl;
         std::cout << "Developers: " << game.getDevelopers() << std::endl;
         std::cout << "Publisher: " << game.getPublisher() << std::endl;
         std::cout << "Release Date: " << game.getReleaseDate() << std::endl;
         std::cout << "Genre: " << game.getGenre() << std::endl;
+
+        passed &= equalOrNot(game.getName(), "Backyard Pharmacy");
+        passed &= equalOrNot(game.getDevelopers(), "38 SnifferDogg Studios");
+        passed &= equalOrNot(game.getPublisher(), "420° Entertainment");
+        passed &= equalOrNot(game.getReleaseDate(), "22/09/2024");
+        passed &= equalOrNot(game.getGenre(), "Dark Comedy");
+
+        std::cout << (passed ? "Test passed." : "Test failed.") << std::endl;
     }
 
     // Tests the getter and setter functions
     void testGettersAndSetters(){
         Game game;
+
+        bool passed = true;
 
         game.setName("Unlicensed to Kill");
 
@@ -68,11 +90,21 @@ class GameTest{
         game.setGenre("Crime Thriller");
 
         std::cout << "Genre: " << game.getGenre() << std::endl;
+
+        passed &= equalOrNot(game.getName(), "Unlicensed to Kill");
+        passed &= equalOrNot(game.getDevelopers(), "PixelDose Studios");
+        passed &= equalOrNot(game.getPublisher(), "VitalPlay Entertainment");
+        passed &= equalOrNot(game.getReleaseDate(), "14/04/1994");
+        passed &= equalOrNot(game.getGenre(), "Crime Thriller");
+
+        std::cout << (passed ? "Test passed." : "Test failed.") << std::endl;
     }
 
     // Tests that the game can be modified from the default constructor
     void testModifyGame(){
         Game game;
+
+        bool passed = true;
 
         std::string name;
         std::cout << "Enter new game name: " << std::endl;
@@ -104,6 +136,22 @@ class GameTest{
         std::cout << "Publisher: " << game.getPublisher() << std::endl;
         std::cout << "Release Date: " << game.getReleaseDate() << std::endl;
         std::cout << "Genre: " << game.getGenre() << std::endl;
+
+        passed &= equalOrNot(game.getName(), name);
+        passed &= equalOrNot(game.getDevelopers(), developers);
+        passed &= equalOrNot(game.getPublisher(), publisher);
+        passed &= equalOrNot(game.getReleaseDate(), releaseDate);
+        passed &= equalOrNot(game.getGenre(), genre);
+
+        std::cout << (passed ? "Test passed." : "Test failed.") << std::endl;
+
+    }
+
+    bool equalOrNot(std::string actual, std::string expected){
+        if (actual != expected){
+            return false;
+        }
+        return true;
     }
 
 };

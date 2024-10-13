@@ -27,23 +27,42 @@ class MedicineTest{
     void testDefault(){
         Medicine med;
 
+        bool passed  = true;
+
         std::cout << "Medicine Name: " << med.getMedName() << std::endl;
         std::cout << "Medicine ID Number: " << med.getMedID() << std::endl;
         std::cout << "Medicine Description: " << med.getDescription() << std::endl;
+
+        passed &= equalOrNot(med.getMedName(), " ");
+        passed &= intEqualOrNot(med.getMedID(), 0);
+        passed &= equalOrNot(med.getDescription(), " ");
+
+        std::cout << (passed ? "Test passed." : "Test failed.") << std::endl;
     }
 
     // Tests the parameterised constructor
     void testConstructor(){
         Medicine med("Panadol", 332528, "Treats pain and reduces fever");
 
+        bool passed = true;
+
         std::cout << "Medicine Name: " << med.getMedName() << std::endl;
         std::cout << "Medicine ID Number: " << med.getMedID() << std::endl;
         std::cout << "Medicine Description: " << med.getDescription() << std::endl;
+
+        passed &= equalOrNot(med.getMedName(), "Panadol");
+        passed &= intEqualOrNot(med.getMedID(), 332528);
+        passed &= equalOrNot(med.getDescription(), "Treats pain and reduces fever");
+
+        std::cout << (passed ? "Test passed." : "Test failed.") << std::endl;
+
     }
 
     // Tests the getter and setter functions
     void testGettersAndSetters(){
         Medicine med;
+
+        bool passed = true;
 
         med.setMedName("Adderall");
         med.setMedID(4036383);
@@ -52,11 +71,19 @@ class MedicineTest{
         std::cout << "Medicine Name: " << med.getMedName() << std::endl;
         std::cout << "Medicine ID Number: " << med.getMedID() << std::endl;
         std::cout << "Medicine Description: " << med.getDescription() << std::endl;
+
+        passed &= equalOrNot(med.getMedName(), "Adderall");
+        passed &= intEqualOrNot(med.getMedID(), 4036383);
+        passed &= equalOrNot(med.getDescription(), "Increases focus and controls behaviour problems");
+
+        std::cout << (passed ? "Test passed." : "Test failed.") << std::endl;
     }
 
     // Tests that the medicines can be modified from the default constructor
     void testModifyMedicine(){
         Medicine med;
+
+        bool passed = true;
 
         std::string name;
         std::cout << "Enter new medicine name: " << std::endl;
@@ -78,6 +105,26 @@ class MedicineTest{
         std::cout << "Medicine Name: " << med.getMedName() << std::endl;
         std::cout << "Medicine ID: " << med.getMedID() << std::endl;
         std::cout << "Medicine Description: " << med.getDescription() << std::endl;
+
+        passed &= equalOrNot(med.getMedName(), name);
+        passed &= intEqualOrNot(med.getMedID(), medID);
+        passed &= equalOrNot(med.getDescription(), description);
+
+        std::cout << (passed ? "Test passed." : "Test failed.") << std::endl;
+    }
+
+    bool equalOrNot(std::string actual, std::string expected){
+        if (actual != expected){
+            return false;
+        }
+        return true;
+    }
+
+    bool intEqualOrNot(int actual, int expected){
+        if (actual != expected){
+            return false;
+        }
+        return true;
     }
 
 };
