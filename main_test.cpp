@@ -9,6 +9,8 @@
 #include "EndScene.h"
 #include "Visitor.h"
 
+// This document is designed to be a rough draft for the final game
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -17,7 +19,7 @@ int main(){
 
     Game game("Backyard Pharmacy", "38 SnifferDogg Studios", "Skag Horse Entertainment", "22/09/2024", "Dark Comedy");
 
-    int menu;
+    int menu = 4;
 
     while (menu != 3){
         std::cout << "For 'How to Play': Enter 1" << std::endl;
@@ -25,6 +27,7 @@ int main(){
         std::cout << "For 'Start Game': Enter 3" << std::endl;
 
         std::cin >> menu;
+        std::cin.ignore();
 
         if (menu == 1){
             std::cout << "Here are the instructions: " << std::endl;
@@ -76,15 +79,15 @@ int main(){
 
     // Customer 1 introduction
 
-    Patient p1("Piper", 15, 1, "My head feels like it’s going to explode! I’m in so much pain! HELP ME!!!", "Mild headaches and hypochondria.", 1);
+    Patient p1("Piper", 15, 1, "My head feels like it’s going to explode! I’m in so much pain! HELP ME!!!", "Mild headaches and hypochondria.", 0);
 
-    Patient p2("Tai", 0, 2, "I swear I’m always panicking, please get me something that’ll calm me down, quick!", "Self-diagnosed severe anxiety disorder, and self-diagnosed everything really.", 2);
+    Patient p2("Tai", 0, 2, "I swear I’m always panicking, please get me something that’ll calm me down, quick!", "Self-diagnosed severe anxiety disorder, and self-diagnosed everything really.", 0);
 
-    Patient p3("Doop-Snogg", 52, 3, "You got that good stuff to chill, fam?", "Mild cough, but it ain’t miss Mary Jane’s fault ya feel me dawg", 3);
+    Patient p3("Doop-Snogg", 52, 3, "You got that good stuff to chill, fam?", "Mild cough, but it ain’t miss Mary Jane’s fault ya feel me dawg", 0);
 
-    Police officer1("Snow", 30, 0, "I’m just really sad all the time, I might be depressed.", "Previously broke right arm due to accident");
+    Police officer1("Snow", 30, 0, "I’m just really sad all the time, I might be depressed.", "Previously broke right arm due to accident.");
 
-    Police officer2("Herb", 78, 0, "I feel really dizzy when I stand and I’m cold all the time" , "None");
+    Police officer2("Herb", 78, 0, "I feel really dizzy when I stand and I’m cold all the time." , "None.");
 
     Police officer3("Spice", 17, 0, "High cholesterol levels.", "Has family history of high cholesterol and heart attacks.");
 
@@ -118,12 +121,6 @@ int main(){
 
     for (int i = 0; i < visitors.getCurrentCapacity(); i++){
         Customer customer = visitors.getVisitors()->at(i);
-        std::cout << customer.getName() << std::endl;
-        std::cout << customer.getIllness() << "\n" << std::endl;
-    }
-
-    for (int i = 0; i < visitors.getCurrentCapacity(); i++){
-        Customer customer = visitors.getVisitors()->at(i);
         
         customer.greetingDialogue(customer);
 
@@ -131,7 +128,7 @@ int main(){
 
         // Tell user how to play here
 
-        for (int i = 0; i < 1; i++){
+        while (true){
 
             std::string action;
 
@@ -145,10 +142,8 @@ int main(){
                 } else {
                     std::cout << "My age is " << customer.getAge() << std::endl;
                 }
-                i--;
             } else if (action == "medical history"){
                 std::cout << customer.getMedicalHistory() << std::endl;
-                i--;
             } else if (action == "storage"){
                 for (int i = 0; i < storage.getNumOfMedicines(); i++){
                     Medicine med = storage.getMedicines()[i];
@@ -156,7 +151,6 @@ int main(){
                     std::cout << "Name: " << med.getMedName() << std::endl;
                     std::cout << "Description: " << med.getDescription() << "\n" << std::endl;
                 }
-                i--;
             } else if (action == "sell"){
                 if (customer.getID() == 0){
                     Police police;
@@ -170,6 +164,8 @@ int main(){
                     Patient patient;
 
                     customer = patient;
+
+                    patient.setPrescriptionID(i+1);
                     
                     if (med == "medicine 1"){
                         customer.checker(med1, patient, user);
@@ -182,10 +178,13 @@ int main(){
                     } else if (med == "medicine 5"){
                         customer.checker(med1, patient, user);
                     }*/
-                    }  
+                    } else {
+                        std::cout << "Invalid input. Check your spelling, or enter \"menu\" to see how to play again." << std::endl;
+                    }
                 }
-                
+                break;
             } else if (action == "deny"){
+                std::cout << "'No prescription medicines are sold in this establishment' you say." << std::endl;
                 if (customer.getID() == 0){
                     Police police;
                     customer = police;
@@ -195,6 +194,7 @@ int main(){
                     customer = patient;
                     patient.wrongDialogue();
                 }
+                break;
             } else if (action == "menu"){
                 int menu;
 
@@ -204,6 +204,7 @@ int main(){
                 std::cout << "To return to game: Enter 3" << std::endl;
 
                 std::cin >> menu;
+                std::cin.ignore();
 
                 if (menu == 1){
                     std::cout << "Here are the instructions: " << std::endl;
@@ -215,7 +216,6 @@ int main(){
                     std::cout << "Genre:        " << game.getGenre() << std::endl;
                     std::cout << std::endl;
                 } else if (menu == 3){
-                    i--;
                 } else {
                     std::cout << "Invalid input, please enter 1, 2 or 3: " << std::endl;
                 }
@@ -225,7 +225,6 @@ int main(){
 
             } else {
                 std::cout << "Invalid input. Check your spelling, or enter \"menu\" to see how to play again." << std::endl;
-                i--;
             }
         }
     }
