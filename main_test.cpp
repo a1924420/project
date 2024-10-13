@@ -17,7 +17,7 @@
 
 int main(){
 
-    Game game("Backyard Pharmacy", "38 SnifferDogg Studios", "Skag Horse Entertainment", "22/09/2024", "Dark Comedy");
+    Game game("Backyard Pharmacy", "38 SnifferDogg Studios", "Skag Horse Entertainment", "15/10/2024", "Dark Comedy");
 
     int menu = 4;
 
