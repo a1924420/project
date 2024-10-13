@@ -25,43 +25,54 @@ class GameTest{
 
     // Tests the default constructor
     void testDefault(){
+
+        // Sets game as default
         Game game;
 
+        // Sets passed as initially true so it only changes if a test is failed
         bool passed = true;
 
+        // Prints default parameters
         std::cout << "Name: " << game.getName() << std::endl;
         std::cout << "Developers: " << game.getDevelopers() << std::endl;
         std::cout << "Publisher: " << game.getPublisher() << std::endl;
         std::cout << "Release Date: " << game.getReleaseDate() << std::endl;
         std::cout << "Genre: " << game.getGenre() << std::endl;
 
+        // Checks default parameters print as expected
         passed &= equalOrNot(game.getName(), " ");
         passed &= equalOrNot(game.getDevelopers(), " ");
         passed &= equalOrNot(game.getPublisher(), " ");
         passed &= equalOrNot(game.getReleaseDate(), " ");
         passed &= equalOrNot(game.getGenre(), " ");
 
+        // States if test has been passed or failed
         std::cout << (passed ? "Test passed." : "Test failed.") << std::endl;
     }
 
     // Tests the parameterised constructor
     void testConstructor(){
+
+        // Setting constructor with assgined variables
         Game game("Backyard Pharmacy", "38 SnifferDogg Studios", "420° Entertainment", "22/09/2024", "Dark Comedy");
 
         bool passed = true;
 
+        // Prints parameters associated to each variable
         std::cout << "Name: " << game.getName() << std::endl;
         std::cout << "Developers: " << game.getDevelopers() << std::endl;
         std::cout << "Publisher: " << game.getPublisher() << std::endl;
         std::cout << "Release Date: " << game.getReleaseDate() << std::endl;
         std::cout << "Genre: " << game.getGenre() << std::endl;
 
+        // Tests parameters have been assigned correctly
         passed &= equalOrNot(game.getName(), "Backyard Pharmacy");
         passed &= equalOrNot(game.getDevelopers(), "38 SnifferDogg Studios");
         passed &= equalOrNot(game.getPublisher(), "420° Entertainment");
         passed &= equalOrNot(game.getReleaseDate(), "22/09/2024");
         passed &= equalOrNot(game.getGenre(), "Dark Comedy");
 
+        // States if test has been passed or failed
         std::cout << (passed ? "Test passed." : "Test failed.") << std::endl;
     }
 
@@ -71,6 +82,7 @@ class GameTest{
 
         bool passed = true;
 
+        // Setting all variables with setter functions and printing result
         game.setName("Unlicensed to Kill");
 
         std::cout << "Name: " << game.getName() << std::endl;    
@@ -91,12 +103,14 @@ class GameTest{
 
         std::cout << "Genre: " << game.getGenre() << std::endl;
 
+        // Checking the expected output is the actual output
         passed &= equalOrNot(game.getName(), "Unlicensed to Kill");
         passed &= equalOrNot(game.getDevelopers(), "PixelDose Studios");
         passed &= equalOrNot(game.getPublisher(), "VitalPlay Entertainment");
         passed &= equalOrNot(game.getReleaseDate(), "14/04/1994");
         passed &= equalOrNot(game.getGenre(), "Crime Thriller");
 
+        // States if test has been passed or failed
         std::cout << (passed ? "Test passed." : "Test failed.") << std::endl;
     }
 
@@ -106,6 +120,7 @@ class GameTest{
 
         bool passed = true;
 
+        // Gets variables from user input
         std::string name;
         std::cout << "Enter new game name: " << std::endl;
         std::getline(std::cin, name);
@@ -131,22 +146,26 @@ class GameTest{
         std::getline(std::cin, genre);
         game.setGenre(genre);
 
+        // Printing all variables set by user input
         std::cout << "Name: " << game.getName() << std::endl;
         std::cout << "Developers: " << game.getDevelopers() << std::endl;
         std::cout << "Publisher: " << game.getPublisher() << std::endl;
         std::cout << "Release Date: " << game.getReleaseDate() << std::endl;
         std::cout << "Genre: " << game.getGenre() << std::endl;
 
+        // Tests that expected output equals real output
         passed &= equalOrNot(game.getName(), name);
         passed &= equalOrNot(game.getDevelopers(), developers);
         passed &= equalOrNot(game.getPublisher(), publisher);
         passed &= equalOrNot(game.getReleaseDate(), releaseDate);
         passed &= equalOrNot(game.getGenre(), genre);
 
+        // States if test has been passed or failed
         std::cout << (passed ? "Test passed." : "Test failed.") << std::endl;
 
     }
 
+    // Takes in parameter returned from getter function and expected output to check if they are equal
     bool equalOrNot(std::string actual, std::string expected){
         if (actual != expected){
             return false;

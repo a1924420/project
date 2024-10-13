@@ -29,27 +29,36 @@ class StorageTest{
 
     // Tests the default constructor
     void testDefault(){
+
+        // Sets default storage
         Storage storage;
 
+        // Prints default number of medicines in storage
         std::cout << "Number of Medicines in Storage: " << storage.getNumOfMedicines() << std::endl;
     }
 
     // Tests the parameterised constructor
     void testConstructor(){
+
+        // Sets medicine variables using constructor
         Medicine med1("Panadol", 332528, "Treats pain and reduces fever");
 
         Medicine med2("Xanax", 11375, "Treats anxiety");
 
+        // Sets storage size to 2 using constructor
         Storage storage(2);
 
+        // Setting and printing number of medicines that can fit in storage
         int num = storage.getNumOfMedicines();
 
         std::cout << "Number of Medicines: " << num << std::endl;
 
+        // Adds medicines to storage
         storage.addMedicine(med1);
 
         storage.addMedicine(med2);
 
+        // Prints medicine variables of all medicines in storage
         for (int i = 0; i < num; i++){
             Medicine med = storage.getMedicines()[i];
             std::cout << "Medicine " << i+1 << ":" << std::endl;
@@ -61,24 +70,31 @@ class StorageTest{
 
     // Tests the getter and setter functions
     void testGettersAndSetters(){
+
+        // Sets medicine variables using constructor
         Medicine med1("Prolaxa", 948273, "Treats chronic digestive issues and helps regulate bowel movements");
 
         Medicine med2("Neurovex", 784329, "Used for alleviating nerve pain and reducing symptoms of neuropathy");
 
         Medicine med3("Cardiolyn", 562917, "Helps regulate blood pressure and supports heart health");
 
+        // Creates default storage
         Storage storage;
 
+        // Creates vector of medicines
         std::vector<Medicine> medList;
         medList.push_back(med1);
         medList.push_back(med2);
         medList.push_back(med3);
 
+        // Sets storage to containing list of medicines stored in previous vector
         storage.setMedicines(medList);
 
+        // Prints number of medicines in storage
         int num = storage.getNumOfMedicines();
         std::cout << "Number of Medicines: " << num << std::endl;
 
+        // Prints list and variables of all medicines in storage
         for (int i = 0; i < num; i++){
             Medicine meds = storage.getMedicines()[i];
             std::cout << "Medicine " << i+1 << ":" << std::endl;
@@ -90,20 +106,26 @@ class StorageTest{
 
     // Tests the function used to add a medicine to the array
     void testAddMedicine(){
+
+        // Sets medicine variables using constructor
         Medicine med1("Panadol", 332528, "Treats pain and reduces fever");
 
         Medicine med2("Xanax", 11375, "Treats anxiety");
 
+        // Sets storage size to 2 using constructor
         Storage storage(2);
 
+        // Setting and printing number of medicines that can fit in storage
         int num = storage.getNumOfMedicines();
 
         std::cout << "Number of Medicines: " << num << std::endl;
 
+        // Adds medicines to storage array
         storage.addMedicine(med1);
 
         storage.addMedicine(med2);
 
+        // Prints list and variables of all medicines in storage
         for (int i = 0; i < num; i++){
             Medicine med = storage.getMedicines()[i];
             std::cout << "Medicine " << i+1 << ":" << std::endl;
@@ -118,14 +140,18 @@ class StorageTest{
 
         std::cout << std::endl;
 
+        // Increases number of medicines that can fit into storage
         storage.setNumOfMedicines(3);
 
         num = storage.getNumOfMedicines();
 
+        // Creating third medicine using constructor
         Medicine med3("Adderall", 4036383, "Increases focus and controls behaviour problems");
 
+        // Adds new medicine to storage
         storage.addMedicine(med3);
 
+        // Prints list and variables of all medicines in storage
         for (int i = 0; i < num; i++){
             Medicine med = storage.getMedicines()[i];
             std::cout << "Medicine " << i+1 << ":" << std::endl;
@@ -137,20 +163,25 @@ class StorageTest{
 
     // Tests the function used to remove a medicine from the array
     void testRemoveMedicine(){
+
+        // Sets medicine variables using constructor
         Medicine med1("Panadol", 332528, "Treats pain and reduces fever");
 
         Medicine med2("Xanax", 11375, "Treats anxiety");
 
         Medicine med3("Adderall", 4036383, "Increases focus and controls behaviour problems");
 
+        // Sets default storage
         Storage storage;
 
+        // Adds medicines to storage
         storage.addMedicine(med1);
 
         storage.addMedicine(med2);
 
         storage.addMedicine(med3);
 
+        // Prints list and variables of all medicines in storage
         for (int i = 0; i < storage.getNumOfMedicines(); i++){
             Medicine med = storage.getMedicines()[i];
             std::cout << "Medicine " << i+1 << ":" << std::endl;
@@ -159,6 +190,7 @@ class StorageTest{
             std::cout << "Description: " << med.getDescription() << std::endl;
         }
 
+        // Removes medicine from storage array
         storage.removeMedicine(med2);
 
         std::cout << std::endl;
@@ -167,8 +199,10 @@ class StorageTest{
 
         std::cout << std::endl;
 
+        // Displays current number of medicines in array
         std::cout << "Number of Medicines: " << storage.getNumOfMedicines() << std::endl;
 
+        // Prints list and variables of all medicines in storage
         for (int i = 0; i < storage.getNumOfMedicines(); i++){
             Medicine meds = storage.getMedicines()[i];
             std::cout << "Medicine " << i+1 << ":" << std::endl;

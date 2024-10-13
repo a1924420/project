@@ -10,6 +10,7 @@
 #include "Visitor.h"
 #include "VisitorTest.h"
 
+// Main function to run all testing units
 int main(){
     VisitorTest test;
 

@@ -238,4 +238,8 @@ int main(){
     } else {
         endscene.badEnding();
     }
+
+    storage.~Storage();
+
+    return 0;
 }
