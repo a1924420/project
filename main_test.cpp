@@ -89,7 +89,7 @@ int main(){
 
     Police officer2("Herb", 78, 0, "I feel really dizzy when I stand and I’m cold all the time." , "None.");
 
-    Police officer3("Spice", 17, 0, "High cholesterol levels.", "Has family history of high cholesterol and heart attacks.");
+    Police officer3("Spice", 17, 0, "My doctor says I have high cholesterol levels.", "Has family history of high cholesterol and heart attacks.");
 
     Visitor visitors(0, 8);
 
