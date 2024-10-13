@@ -4,21 +4,16 @@
 #include <vector>       // For std::vector
 #include <string>       // For std::string
 
-int main() {
-    // Create a list (vector) of customers
-    std::vector<std::string> customers = {"Police", "Patient", "Patient", "Police", "Patient"};
 
-    // Create a random number generator
-    std::random_device rd;   // Seed the random number generator
+// should be placed under the customer information
+
+ std::random_device rd;   // Seed for the random number generator
     std::mt19937 g(rd());    // Mersenne Twister engine for randomization
-
-    // Shuffle the array (vector) of customers
     std::shuffle(customers.begin(), customers.end(), g);
 
-    // Rest of the game Introduction.....
-    
+    // Use a visitor to manage the customers
+    Visitor visitors(0, 8);
 
-
-
-return 0;
-}
+    for (Customer* customer : customers) {
+        visitors.addCustomer(*customer);
+    }
