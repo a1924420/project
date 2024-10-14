@@ -107,7 +107,7 @@ int main() {
 
         cin >> answer;
 
-        while (!(cin >> answer) || (answer != 0 && answer != 1)) { // if input is not numerical
+        while (!(cin >> answer) || (answer != 0 && answer != 1)) { // if input is invalid
             cout << "I don't remember that being an option. \n";
             cin.clear();
             cin.ignore(365, '\n');
