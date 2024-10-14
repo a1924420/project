@@ -1,7 +1,10 @@
 #include <iostream>
 #include <string>
 #include "Player.h"
+ #include <SFML/Graphics.hpp>
+#include <iostream>
 #include "EndScene.h"
+using namespace sf;
 
 using namespace std;
 
@@ -19,8 +22,34 @@ void EndScene::badEnding(){
     cin.get();
     cout << "If only your mother-- hey, what was that? Did you see that?\n" << endl;
     
-    // insert png jumpscare of a police guy
-    // consider png++ to handle this
+   
+    RenderWindow window(VideoMode(800, 600), "SFML Works!");
+    
+    Texture texture;
+    if (!texture.loadFromFile("police officer.png")) {  // Load texture once
+        cerr << "Error loading police officer.png" << endl;
+        return 1; // Exit if the image cannot be loaded
+    }
+
+    Sprite sprite(texture);  // Create sprite with loaded texture
+
+    while (window.isOpen()) {
+        Event event;
+        while (window.pollEvent(event)) {
+            if (event.type == Event::Closed) {
+                window.close();
+                cout << "Event closed" << endl;
+                exit(EXIT_SUCCESS);
+            }
+        }
+
+        window.clear();      // Clear the window
+        window.draw(sprite); // Draw the sprite
+        window.display();    // Display the contents of the window
+    }
+
+}
+
 
     cout << "'Hey, freeze! It's the police!' \n";
     cin.get();
