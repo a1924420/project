@@ -4,7 +4,7 @@
  #include <SFML/Graphics.hpp>
 #include <iostream>
 #include "EndScene.h"
-using namespace sf;
+
 
 using namespace std;
 
@@ -23,15 +23,15 @@ void EndScene::badEnding(){
     cout << "If only your mother-- hey, what was that? Did you see that?\n" << endl;
     
    
-    RenderWindow window(VideoMode(800, 600), "SFML Works!");
+    sf::RenderWindow window(sf::VideoMode(800, 600), "SFML Works!");
     
 
-    Sprite sprite(texture);  // Create sprite with loaded texture
+    sf::Sprite sprite(texture);  // Create sprite with loaded texture
 
     while (window.isOpen()) {
-        Event event;
+        sf::Event event;
         while (window.pollEvent(event)) {
-            if (event.type == Event::Closed) {
+            if (event.type == sf::Event::Closed) {
                 window.close();
                 cout << "Event closed" << endl;
                 exit(EXIT_SUCCESS);
