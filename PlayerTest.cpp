@@ -3,14 +3,12 @@
 #include "Person.h"
 
 int main() {
-    PlayerTest beta;
-
-    /* beta.takeMedicineTest();
+    PlayerTest beta; // create test user
     beta.ageTest();
     beta.nameTest();
-    beta.constructor(); */
+    beta.takeMedicineTest();
 
-    Player user;
+    Player user; // create user
 
     user.setName("abdefghijklmnopqrst");
     cout << user.getName();
