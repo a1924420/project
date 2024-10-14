@@ -49,6 +49,7 @@ int main(){
             << "Enter 'deny' to refuse service to the current customer and make them leave the pharmacy. \n"
             << "Enter 'menu' to return to the menu. \n"
             << "Good luck! \n";
+            cin.get();
 
         } else if (menu == 2){
             cout << "Name:         " << game.getName() << endl;
@@ -61,7 +62,6 @@ int main(){
             cin.get();
             cout << "Genre:        " << game.getGenre() << endl;
             cin.get();
-            cout << endl;
         } 
         
         else if (menu == 3) {
