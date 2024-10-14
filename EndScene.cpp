@@ -2,7 +2,6 @@
 #include <string>
 #include "Player.h"
  #include <SFML/Graphics.hpp>
-#include <iostream>
 #include "EndScene.h"
 
 
