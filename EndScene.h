@@ -6,7 +6,6 @@
 #include "Player.h"
 
 class EndScene{
-private:
 
 public:
     void goodEnding();
