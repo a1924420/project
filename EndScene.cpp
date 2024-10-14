@@ -25,11 +25,6 @@ void EndScene::badEnding(){
    
     RenderWindow window(VideoMode(800, 600), "SFML Works!");
     
-    Texture texture;
-    if (!texture.loadFromFile("police officer.png")) {  // Load texture once
-        cerr << "Error loading police officer.png" << endl;
-        return 1; // Exit if the image cannot be loaded
-    }
 
     Sprite sprite(texture);  // Create sprite with loaded texture
 
