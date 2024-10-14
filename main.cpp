@@ -1,3 +1,5 @@
+// backyard pharmacy game: play as an unlicensed pharmacist while avoiding cops!
+
 #include "Person.h"
 #include "Player.h"
 #include "Customer.h"
@@ -9,8 +11,6 @@
 #include "EndScene.h"
 #include "Visitor.h"
 
-// This document is designed to be a rough draft for the final game
-
 #include <iostream>
 #include <string>
 #include <vector>
@@ -20,7 +20,7 @@ using namespace std;
 int main(){
 
     Game game("Backyard Pharmacy", "38 SnifferDogg Studios", "Skag Horse Entertainment", "15/10/2024", "Dark Comedy");
-    string action = "storage"; // player action, default value is nothing
+    string action = "storage"; // player actions
     int menu = 4; // menu state; 0 to quit, 1 for instructions, 2 for about, 3 for start, 4 for default
 
     while (menu != 3){
@@ -39,8 +39,9 @@ int main(){
             << "Be warned though! Some patients are not what they seem... \n"
             << "If you feel something is off, deny them! Undercover cops are around every corner. \n"
             << "Be sure to get medicine to as many patients as possible without giving one to a cop. \n"
-            << "Otherwise you may find that something unpleasant will happen... \n\n"
-            << "Here are the actions you can execute, make sure you DO NOT use capital letters: \n \n" // actions
+            << "Otherwise you may find that something unpleasant will happen... \n";
+            cin.get();
+            cout << "Here are the actions you can execute, make sure you DO NOT use capital letters: \n \n" // actions
             << "Enter 'age' to ask for the current customer's age. \n"
             << "Enter 'medhist' to ask for the current customer's medical history. \n"
             << "Enter 'storage' to view all the medicines available in storage in your storage. \n"
@@ -323,13 +324,17 @@ int main(){
                     << "Enter 'menu' to return to the menu. \n"
                     << "Good luck! \n";
 
-                    cout << "Enter '3' to return to the game. \n";
+                    cout << "Enter '3' to return to the game or '0' to quit. \n";
                     cin >> menu;
 
                     while (!(cin >> menu)) {
-                        cout << "There's literally one option you can choose from here. \n";
+                        cout << "There's literally two options you can choose from here. \n";
                         cin.clear();
                         cin.ignore(365, '\n');
+                    }
+
+                    if (menu == 0) {
+                        return 0; // quit game
                     }
                 }
 
