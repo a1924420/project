@@ -1,3 +1,5 @@
+// backyard pharmacy game: play as an unlicensed pharmacist while avoiding cops!
+
 #include "Person.h"
 #include "Player.h"
 #include "Customer.h"
@@ -9,8 +11,6 @@
 #include "EndScene.h"
 #include "Visitor.h"
 
-// This document is designed to be a rough draft for the final game
-
 #include <iostream>
 #include <string>
 #include <vector>
@@ -20,13 +20,14 @@ using namespace std;
 int main(){
 
     Game game("Backyard Pharmacy", "38 SnifferDogg Studios", "Skag Horse Entertainment", "15/10/2024", "Dark Comedy");
-
-    int menu = 4;
+    string action = "storage"; // player actions
+    int menu = 4; // menu state; 0 to quit, 1 for instructions, 2 for about, 3 for start, 4 for default
 
     while (menu != 3){
         cout << "For 'How to Play': Enter 1" << endl;
         cout << "For 'About Game': Enter 2" << endl;
         cout << "For 'Start Game': Enter 3" << endl;
+        cout << "To quit: Enter 0" << endl;
 
         cin >> menu;
         cin.ignore();
@@ -38,8 +39,9 @@ int main(){
             << "Be warned though! Some patients are not what they seem... \n"
             << "If you feel something is off, deny them! Undercover cops are around every corner. \n"
             << "Be sure to get medicine to as many patients as possible without giving one to a cop. \n"
-            << "Otherwise you may find that something unpleasant will happen... \n\n"
-            << "Here are the actions you can execute, make sure you DO NOT use capital letters: \n \n" // actions
+            << "Otherwise you may find that something unpleasant will happen... \n";
+            cin.get();
+            cout << "Here are the actions you can execute, make sure you DO NOT use capital letters: \n \n" // actions
             << "Enter 'age' to ask for the current customer's age. \n"
             << "Enter 'medhist' to ask for the current customer's medical history. \n"
             << "Enter 'storage' to view all the medicines available in storage in your storage. \n"
@@ -47,7 +49,7 @@ int main(){
             << "Enter 'deny' to refuse service to the current customer and make them leave the pharmacy. \n"
             << "Enter 'menu' to return to the menu. \n"
             << "Good luck! \n";
-
+            cin.get();
 
         } else if (menu == 2){
             cout << "Name:         " << game.getName() << endl;
@@ -60,13 +62,22 @@ int main(){
             cin.get();
             cout << "Genre:        " << game.getGenre() << endl;
             cin.get();
-            cout << endl;
-        } else if (menu == 3){
+        } 
+        
+        else if (menu == 3) {
             break;
-        } else {
+        } 
+
+        else if (menu == 0) {
+            return 0;
+        }
+        
+        else {
             cout << "Invalid input, please enter 1, 2 or 3: " << endl;
         }
-    }
+    } 
+    
+    // end menu intro
 
     cout << "The game has begun." << endl;
 
@@ -93,16 +104,58 @@ int main(){
 
     Player user(name, age, 0, 0);
 
-    cout << "Customer 1 enters." << endl;
+    string answer = ""; // initialised with default value 
+
+    // prologue intro plays 
+    cout << "It's a beautiful day outside and you're a terrible student. \n"
+    << "Your name is " << user.getName() << " and you're " << user.getAge() << " years young. \n"
+    << "Today, you're starting your new job as a real pharmacist. \n"
+    << "What wonders will await you on your first shift? \n" 
+    << "You ponder that as you open your backdoor and enter your backyard. \n"
+    << "Which also happens to be your new workspace. \n"
+    << "That's right... you're a backyard pharmacist! \n";
+
+    cout << "Now, are you ready to start? \n"
+    << "Type 'yes' or 'no'.";
+
+    cin >> answer;
+
+    while (answer != "yes" && answer != "no") { // while answer is not yes, but also not no
+        if (answer == "maybe") {
+            cout << "What are you, indecisive? \n";
+        }
+
+        else {
+            cout << "It's a yes or no question. \n";
+        }
+
+        cin >> answer;  
+    }
+
+    if (answer == "yes") {
+        cout << "Great job! \n" 
+        << "Let's get you to your first customer. \n"
+        << "They're coming through the unlocked side entrance that leads into your kitchen now. \n";
+    }
+
+    else if (answer == "no") {
+        cout << "Why did you open this game then? \n";
+        return 0;
+    }
+
+    else {
+        cout << "Unknown error: aborting.";
+        return 0;
+    }
 
     // creating visitor objects according to name, age, id, and dialogue
-    Patient p1("Piper", 15, 1, "My head feels like it’s going to explode! I’m in so much pain! HELP ME!!!", "Mild headaches and hypochondria.", 0);
-    Patient p2("Tai", 0, 2, "I swear I’m always panicking, please get me something that’ll calm me down, quick!", "Self-diagnosed severe anxiety disorder, and self-diagnosed everything really.", 0);
-    Patient p3("Doop-Snogg", 52, 3, "Yo, you got something for this cough, homie?", "Mild cough, but it ain’t Mary Jane’s fault ya feel me dawg", 0);
-    Patient p4("Ecstasy", 25, 4, "I've been feeling really low, my therapist says I need medication but I can't afford a prescription.", "Depression and PTSD.", 0);
-    Patient p5("Euphoria", 39, 5, "I need a medication, but it's really embarrassing... I think it rhymes with something mide.", "Diarrhea and Constipation.", 0);
-    Police officer1("Snow", 30, 0, "I’m just really sad all the time, I might be depressed.", "Previously broke right arm due to accident.");
-    Police officer2("Herb", 78, 0, "I feel really dizzy when I stand and I’m cold all the time." , "None.");
+    Patient p1("Piper", 15, 1, "My head feels like it's going to explode! I'm in so much pain! HELP ME!!!", "Mild headaches and hypochondria.", 0);
+    Patient p2("Tai", 0, 2, "I swear I'm always panicking, please get me something that'll calm me down, quick!", "Self-diagnosed severe anxiety disorder, and self-diagnosed everything really.", 0);
+    Patient p3("Doop-Snogg", 52, 3, "The (cough) more medicated (cough), the more dedicated (cough).", "Mild cough, but it ain't Mary Jane's fault ya feel me dawg.", 0);
+    Patient p4("Ecstasy", 25, 4, "I've been feeling really sad ever since the Queen died. Bless her heart. Can you help me?", "Depression and PTSD.", 0);
+    Patient p5("Euphoria", 39, 5, "I need a medication, but it's really embarrassing... I think it rhymes with something mide.", "Diarrhea and constipation.", 0);
+    Police officer1("Snow", 30, 0, "I'm just really sad all the time, I might be depressed.", "Previously broke right arm due to accident.");
+    Police officer2("Herb", 78, 0, "I feel really dizzy when I stand and I'm cold all the time." , "None.");
     Police officer3("Spice", 17, 0, "My doctor says I have high cholesterol levels.", "Has family history of high cholesterol and heart attacks.");
 
     Visitor visitors(0, 8);
@@ -133,17 +186,16 @@ int main(){
     storage.addMedicine(med4);
     storage.addMedicine(med5);
 
-    string action = ""; // player action, default value is nothing
-
     for (int i = 0; i < visitors.getCurrentCapacity(); i++){
         Customer customer = visitors.getVisitors()->at(i); // fetch customer aligned with current index
+        
         customer.greetingDialogue(customer);
-
         cout << customer.getIllness() << endl;
 
-        while (true){
+        while (true) {
             cout << "Enter what you would like to do! Remember, you can go back to the menu at any time." << endl;
-            getline(cin, action);
+            
+            cin >> action;
 
             if (action == "age"){ // ask for customer age
                 if (customer.getAge() == 0) {
@@ -181,7 +233,7 @@ int main(){
 
                     patient.setPrescriptionID(i+1);
 
-                    string med;
+                    string med = "med1";
 
                     bool sellInProgress = true; // if currently in process of selling
                     while (sellInProgress == true){
@@ -195,7 +247,7 @@ int main(){
                     << "Enter 'med5' to sell medicine 5 to patient. \n"
                     << "Enter 'storage' to view storage again. \n";
 
-                    getline(cin, med);
+                    cin >> med;
 
                         if (med == "med1"){
                             customer.checker(med1, patient, user);
@@ -236,22 +288,12 @@ int main(){
                         }
                     }
                 }
+
                 break;
             } 
             
             else if (action == "deny"){
-                cout << "'No prescription medicines are sold in this establishment,' you say." << endl;
-                if (customer.getID() == 0){
-                    Police police;
-                    customer = police;
-                    police.rightDialogue();
-                } 
-                
-                else {
-                    Patient patient;
-                    customer = patient;
-                    patient.wrongDialogue();
-                }
+                user.deny();
 
                 break;
             } 
@@ -260,35 +302,30 @@ int main(){
                 int menu;
 
                 while (menu != 3){
-                cout << "For 'How to Play': Enter 1" << endl;
-                cout << "For 'About Game': Enter 2" << endl;
-                cout << "To return to game: Enter 3" << endl;
+                    cout << "These are all the actions you can take: \n"
+                    << "Enter 'age' to ask for the current customer's age. \n"
+                    << "Enter 'medhist' to ask for the current customer's medical history. \n"
+                    << "Enter 'storage' to view all the medicines available in storage in your storage. \n"
+                    << "Enter 'sell' to sell the current customer a medicine available in storage. \n"
+                    << "Enter 'deny' to refuse service to the current customer and make them leave the pharmacy. \n"
+                    << "Enter 'menu' to return to the menu. \n"
+                    << "Good luck! \n";
 
-                cin >> menu;
-                cin.ignore();
+                    cout << "Enter '3' to return to the game or '0' to quit. \n";
+                    cin >> menu;
 
-                if (menu == 1){
-                    cout << "Here are the instructions: " << endl;
-                } 
-                
-                else if (menu == 2){
-                    cout << "Name:         " << game.getName() << endl;
-                    cout << "Developers:   " << game.getDevelopers() << endl;
-                    cout << "Publisher:    " << game.getPublisher() << endl;
-                    cout << "Release Date: " << game.getReleaseDate() << endl;
-                    cout << "Genre:        " << game.getGenre() << endl;
-                    cout << endl;
-                } 
-                
-                else if (menu == 3){
-                } 
-                
-                else {
-                    cout << "Invalid input, please enter 1, 2 or 3: " << endl;
+                    while (!(cin >> menu)) {
+                        cout << "There's literally two options you can choose from here. \n";
+                        cin.clear();
+                        cin.ignore(365, '\n');
+                    }
+
+                    if (menu == 0) {
+                        return 0; // quit game
+                    }
                 }
-            }
-                cout << "Smoke break over, you're back in the pharmacy." << endl;
 
+                cout << "Smoke break over, you're back in the pharmacy." << endl;
             } 
             
             else {
@@ -303,7 +340,9 @@ int main(){
 
     if (user.getScore() >= 40){
         endscene.goodEnding();
-    } else {
+    } 
+    
+    else {
         endscene.badEnding();
     }
 
