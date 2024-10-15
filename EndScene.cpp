@@ -45,7 +45,6 @@ void EndScene::badEnding(){
     sf::Texture texture;
     if (!texture.loadFromFile("./police officer.png")) {  // Ensure the correct path and extension are used
         std::cout << "Error loading image" << std::endl;
-        return -1;
     }
 
     // Create sprite with loaded texture
@@ -80,9 +79,6 @@ void EndScene::badEnding(){
         window.draw(sprite);
         window.display();
     }
-
-    
-
 
     cout << "'Hey, freeze! It's the police!' \n";
     cin.get();
