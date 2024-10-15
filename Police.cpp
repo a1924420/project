@@ -33,6 +33,7 @@ void Police::rightDialogue(){
 // This is the wrong dialogue that will be output when the police catch the player
 void Police::wrongDialogue(){
     cout << "\nWait, so you do sell medicine here?\n" << endl;
+    std::cin.ignore(365, '\n');
     cin.get();
     cout << "That's illegal!" << endl;
     cin.get();
