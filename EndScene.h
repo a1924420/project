@@ -7,6 +7,8 @@
 
 class EndScene{
 public:
+
+    // Two possible game ending dialogues
     void goodEnding();
     void badEnding();
 };

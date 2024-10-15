@@ -18,33 +18,33 @@ class Customer: public Person{
     std::string medicalHistory;
 
     public:
-// Default constructor
+    // Default constructor
     Customer();
-//// Parameterised constructor
+    // Parameterised constructor
     Customer(std::string name, int age, int ID);
-//// Parameterised constructor
+    // Parameterised constructor
     Customer(std::string name, int age, int ID, std::string illness, std::string medicalHistory);
-//Gets the name for the customer
+    //Gets the name for the customer
     std::string getName();
-//  Gets the age of the customer
+    //  Gets the age of the customer
     int getAge();
-// Gets the illness from the customer
+    // Gets the illness from the customer
     std::string getIllness();
-//Gets the medical history of the customer
+    //Gets the medical history of the customer
     std::string getMedicalHistory();
-//Sets the name of the customer
+    //Sets the name of the customer
     void setName(std::string name);
-//Sets the age of the customer
+    //Sets the age of the customer
     void setAge(int age);
-//Gets the ID from the customer
+    //Gets the ID from the customer
     int getID();
-//Sets the ID of the customer
+    //Sets the ID of the customer
     void setID(int ID);
-//Sets the illness of the customer
+    //Sets the illness of the customer
     void setIllness(std::string illness);
-//Sets the medical History of the customer
+    //Sets the medical History of the customer
     void setMedicalHistory(std::string medicalHistory);
-// Outputs the dialogue when the customer arrives
+    // Outputs the dialogue when the customer arrives
     void greetingDialogue(Customer customer);
 
 // Member function for the dialogue when the player gives the correct medication

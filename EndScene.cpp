@@ -6,12 +6,14 @@
 
 using namespace std;
 
+// Winning ending dialogue
 void EndScene::goodEnding(){
     cout << "After a long day of distributing medicine to the people... you go home! \n";
     cin.get();
     cout << "You're a real pharmacist! \n";
 }
 
+// Losing ending dialogue
 void EndScene::badEnding(){
     cout << "The night is impossibly dark. You wander from alleyway to alleyway, searching for your car.\n";
     cin.ignore(365, '\n');
