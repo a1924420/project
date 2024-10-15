@@ -92,5 +92,5 @@ void Player::deny(){
 
     cout << "Nuh-uh... that's a cop! A pig! An authority figure! \n"
     << "'No, officer,' you say. 'We don't sell any medicines around here. Only vapes!' \n"
-    << "Your customer looks disgruntled and walks away. \n";
+    << "Your customer looks disgruntled. \n";
 }
