@@ -37,3 +37,24 @@ void Patient::wrongDialogue(){
     std::cout <<"Seriously? You suck at your job."<< std::endl;
 }
 
+// The getter for checking if it is correct or not.
+bool Patient::getCorrectOrNot() { 
+    return correctOrNot; }
+
+// The setter for checking if it is correct or not
+void Patient::setCorrectOrNot(bool correctOrNot) {
+  this->correctOrNot = correctOrNot;
+}
+
+// This checks if the player has prescribed the correct information to customer
+void Patient::checker(Medicine med, Patient patient, Player player){
+
+    if (med.getMedID() == patient.getPrescriptionID()){
+        patient.setCorrectOrNot(true);
+        patient.rightDialogue();
+    }else{
+        patient.setCorrectOrNot(false);
+        patient.wrongDialogue();
+    }
+}
+

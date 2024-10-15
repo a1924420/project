@@ -10,7 +10,6 @@ Police::Police(){
     setName(" ");
     setAge(0);
     setID(0);
-    setCorrectOrNot(false);
 }
 // Initailaises the police officer
 Police::Police(std::string name, int age, int ID, std::string illness, std::string medicalHistory){

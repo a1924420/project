@@ -14,7 +14,6 @@ class Customer: public Person{
     private:
 
     int ID;
-    bool correctOrNot;
     std::string illness;
     std::string medicalHistory;
 
@@ -45,12 +44,6 @@ class Customer: public Person{
     void setIllness(std::string illness);
 //Sets the medical History of the customer
     void setMedicalHistory(std::string medicalHistory);
-//Gets the check if the correct medication was distributed to the correct person
-    bool getCorrectOrNot();
-//Sets if the correct medication was distributed to the correct person
-    void setCorrectOrNot(bool correctOrNot);
-//Checks  the customer details
-    void checker(Medicine med, Patient patient, Player player);
 // Outputs the dialogue when the customer arrives
     void greetingDialogue(Customer customer);
 

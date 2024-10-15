@@ -106,6 +106,8 @@ int main(){
 
     Player user(name, age, 0, 0);
 
+    int score = user.getScore();
+
     string answer = ""; // initialised with default value 
 
     // prologue intro plays 
@@ -256,27 +258,47 @@ int main(){
                     cin >> med;
 
                         if (med == "med1"){
-                            customer.checker(med1, patient, user);
+                            patient.checker(med1, patient, user);
+                            std::cout << patient.getCorrectOrNot();
+                            if (patient.getCorrectOrNot() == true){
+                                score += 10;
+                            }
                             sellInProgress = false;
                         } 
                         
                         else if (med == "med2"){
-                            customer.checker(med2, patient, user);
+                            patient.checker(med2, patient, user);
+                            std::cout << patient.getCorrectOrNot();
+                            if (patient.getCorrectOrNot() == true){
+                                score += 10;
+                            }
                             sellInProgress = false;
                         } 
                         
                         else if (med == "med3"){
-                            customer.checker(med3, patient, user);
+                            patient.checker(med3, patient, user);
+                            std::cout << patient.getCorrectOrNot();
+                            if (patient.getCorrectOrNot() == true){
+                                score += 10;
+                            }
                             sellInProgress = false;
                         } 
                         
                         else if (med == "med4"){
-                            customer.checker(med4, patient, user);
+                            patient.checker(med4, patient, user);
+                            std::cout << patient.getCorrectOrNot();
+                            if (patient.getCorrectOrNot() == true){
+                                score += 10;
+                            }
                             sellInProgress = false;
                         } 
                         
                         else if (med == "med5"){
-                            customer.checker(med5, patient, user);
+                            patient.checker(med5, patient, user);
+                            std::cout << patient.getCorrectOrNot();
+                            if (patient.getCorrectOrNot() == true){
+                                score += 10;
+                            }
                             sellInProgress = false;
                         } 
                         
@@ -342,6 +364,10 @@ int main(){
     }
 
     cout << "It's now the end of your busy working day." << endl;
+
+    user.setScore(score);
+
+    std::cout << user.getScore() << std::endl;
 
     EndScene endscene;
 

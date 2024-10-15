@@ -11,6 +11,7 @@ class Patient: public Customer{
     private:
 
     int prescriptionID;
+    bool correctOrNot;
 
     public:
 // default constructor
@@ -26,6 +27,13 @@ class Patient: public Customer{
 
 // Member function for the dialogue when the player gives the wrong medication to the customer 
     void wrongDialogue();
+
+    //Gets the check if the correct medication was distributed to the correct person
+    bool getCorrectOrNot();
+//Sets if the correct medication was distributed to the correct person
+    void setCorrectOrNot(bool correctOrNot);
+//Checks  the customer details
+    void checker(Medicine med, Patient patient, Player player);
 
 };
 

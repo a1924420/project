@@ -7,7 +7,7 @@
 #include <iostream>
 #include <string>
 // initialise the customer
-Customer::Customer(): ID(0), correctOrNot(false){
+Customer::Customer(): ID(0){
     setName(" ");
     setAge(0);
 }
@@ -18,7 +18,7 @@ Customer::Customer(std::string name, int age, int ID): ID(ID){
 }
 
 Customer::Customer(std::string name, int age, int ID, std::string illness, std::string medicalHistory): ID(ID), 
-correctOrNot(false), illness(illness), medicalHistory(medicalHistory){
+illness(illness), medicalHistory(medicalHistory){
     setName(name);
     setAge(age);
 }
@@ -61,26 +61,7 @@ int Customer::getID() {
 // the Setter for getting the ID of the patient
 void Customer::setID(int ID) { 
     this->ID = ID; }
-// The getter for checking if it is correct or not.
-bool Customer::getCorrectOrNot() { 
-    return correctOrNot; }
-// The setter for checking if it is correct or not
-void Customer::setCorrectOrNot(bool correctOrNot) {
-  this->correctOrNot = correctOrNot;
-}
-// This checks if the player has prescribed the correct information to customer
-void Customer::checker(Medicine med, Patient patient, Player player){
 
-    if (med.getMedID() == patient.getPrescriptionID()){
-        patient.setCorrectOrNot(true);
-        patient.rightDialogue();
-        int currentScore = player.getScore();  
-        player.setScore(currentScore + 10); 
-    }else{
-        patient.setCorrectOrNot(false);
-        patient.wrongDialogue();
-    }
-}
 // The customer introduces themselves
 void Customer::greetingDialogue(Customer customer){
     std::cout << "Hello, my name is " << customer.getName() << ", and I'm here to collect some medicine." << std::endl;
