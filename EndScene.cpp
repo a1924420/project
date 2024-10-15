@@ -38,7 +38,7 @@ void EndScene::badEnding(){
 
     // Load the texture
     sf::Texture texture;
-    if (!texture.loadFromFile("./snoop.jpg")) {  // Ensure the correct path and extension are used
+    if (!texture.loadFromFile("./police officer.png")) {  // Ensure the correct path and extension are used
         std::cout << "Error loading image" << std::endl;
         return -1;
     }
