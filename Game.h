@@ -10,20 +10,18 @@ class Game {
     private:
 
     // Private variables used to store the game's details
-    std::string name; // name of the game
-    std::string developers; // developers of the game
-    std::string publisher; // publisher of the game
-    std::string releaseDate; // release date of the game
-    std::string genre; // genre of the game
+    std::string name; 
+    std::string developers; 
+    std::string publisher; 
+    std::string releaseDate; 
+    std::string genre; 
 
     public:
 
     // Default constructor
-    // Initialises game with empty strings for all variables
     Game();
 
     // Parameterised constructor
-    // Initialises game's details with specific strings for all variables
     Game(std::string name, std::string developers, std::string publisher, std::string releaseDate, std::string genre);
 
     // Getter functions to access and return private variables
