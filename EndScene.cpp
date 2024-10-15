@@ -9,8 +9,9 @@
 using namespace std;
 
 void EndScene::goodEnding(){
-    cout << "After a long day of distributing medicine to the people... you go home! \n" 
-    << "You're a real pharmacist! \n";
+    cout << "After a long day of distributing medicine to the people... you go home! \n";
+    cin.get();
+    cout << "You're a real pharmacist! \n";
 }
 
 void EndScene::badEnding(){
