@@ -49,7 +49,7 @@ void testGettersAndSetters() {
 // Test the checker function (interaction between Customer, Medicine, and Patient)
 void testChecker() {
     Customer customer("Spice", 40, 789, "Hayfever", "No Medical History");
-    Medicine med(101); 
+    Medicine med("Medicine", 101, "Description"); 
     Patient patient;
     patient.setPrescriptionID(101); 
     Player player;
