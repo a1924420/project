@@ -326,6 +326,7 @@ int main(){
                 }
 
                 cout << "Smoke break over, you're back in the pharmacy." << endl;
+                menu = 4;
             } 
             
             else {
