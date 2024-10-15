@@ -33,7 +33,7 @@ void Player::setName(string newName) {
     }
 
     else {
-        cout << "Your name must be less than 12 characters.";
+        cout << "Your name must be less than 12 characters. \n";
     }
 };
 

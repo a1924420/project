@@ -1,10 +1,8 @@
 #include <iostream>
 #include <string>
 #include "Player.h"
-//#include <SFML/Graphics.hpp>
 #include <iostream>
 #include "EndScene.h"
-//#include <SFML/System/Clock.hpp>
 
 using namespace std;
 

@@ -13,7 +13,7 @@ int main() {
     cin >> score;
 
     EndSceneTest alpha(score);
-    alpha.test();
+    alpha.test(); // run tests on score
     
     return 0;
 }
