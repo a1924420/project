@@ -327,9 +327,9 @@ int main(){
             } 
             
             else if (action == "menu"){
-                int menu;
+                string menu = "";
 
-                while (menu != 3){
+                while (menu != "resume"){
                     cout << "These are all the actions you can take: \n"
                     << "Enter 'age' to ask for the current customer's age. \n"
                     << "Enter 'medhist' to ask for the current customer's medical history. \n"
@@ -339,21 +339,20 @@ int main(){
                     << "Enter 'menu' to return to the menu. \n"
                     << "Good luck! \n";
 
-                    cout << "Enter '3' to return to the game or '0' to quit. \n";
+                    cout << "Enter 'resume' to return to the game or 'quit' to quit. \n";
                     cin >> menu;
 
-                    while (!(cin >> menu)) {
-                        cout << "There's literally two options you can choose from here. \n";
-                        cin.clear();
-                        cin.ignore(365, '\n');
+                    while (menu != "resume" && menu != "quit") {
+                        cout << "Try again! \n";
+                        cin >> menu;
                     }
 
-                    if (menu == 0) {
+                    if (menu == "quit") {
                         return 0; // quit game
                     }
                 }
 
-                menu = 4;
+                menu = "";
                 cout << "Smoke break over, you're back in the pharmacy." << endl;
             } 
             
