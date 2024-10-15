@@ -329,6 +329,7 @@ int main(){
                     }
                 }
 
+                menu = 4;
                 cout << "Smoke break over, you're back in the pharmacy." << endl;
             } 
             
