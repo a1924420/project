@@ -17,38 +17,31 @@ Visitor::Visitor(): currentCapacity(0), maxCapacity(0), visitors(new std::vector
 Visitor::Visitor(int currentCapacity, int maxCapacity): currentCapacity(currentCapacity), maxCapacity(maxCapacity), visitors(new std::vector<Customer>()) {}
 
 // Getter for the current capacity of customers in the visitors array
-// @return: returns the integer of the current capacity of customers in the visitors array
 int Visitor::getCurrentCapacity(){ return currentCapacity; }
 
 // Getter for the maximum capacity of customers that the visitor array can hold
-// @return: returns the integer of the maximum capacity of customers that the visitor array can hold
 int Visitor::getMaxCapacity(){ return maxCapacity; }
 
 // Getter for the list of customers in the visitors array
-// @return: returns the list of customers in the visitors array
 std::vector<Customer>* Visitor::getVisitors(){ return visitors; }
 
 // Setter for the current capacity of customers in the visitors array 
-// @param currentCapacity: new current capacity of customers in the visitors array
 void Visitor::setCurrentCapacity(int currentCapacity){
     this->currentCapacity = currentCapacity;
 }
 
 // Setter for the maximum capacity of customers that the visitor array can hold
-// @param maxCapacity: new maximum capacity of customers that the visitor array can hold
 void Visitor::setMaxCapacity(int maxCapacity){
     this->maxCapacity = maxCapacity;
 }
 
 // Setter for the list of customers in the visitors array
-// @param visitors: new list of customers in the visitors array
 void Visitor::setVisitors(std::vector<Customer>& visitors){
     *(this->visitors) = visitors;
     currentCapacity = this->visitors->size();
 }
 
 // Adds a new customer to the visitors array
-// @param customer: new customer being added to the visitors array
 void Visitor::addCustomer(Customer customer){
 
     // Loop to add customer to visitors array
@@ -67,7 +60,6 @@ void Visitor::addCustomer(Customer customer){
 }
 
 // Removes a  customer from the visitors array
-// @param customer: customer being removed from visitors array, identified by its ID number
 void Visitor::removeCustomer(Customer customer){
 
     // Creating a new vector to hold customers that will remain after one is removed

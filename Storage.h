@@ -13,17 +13,15 @@ class Storage{
     private:
 
     // Private variables used to store the storage details
-    int numOfMedicines; // Number of medicines in storage
-    std::vector<Medicine>* medicines; // Vector used to store the list of Medicine objects
+    int numOfMedicines; 
+    std::vector<Medicine>* medicines; 
 
     public:
 
     // Default constructor
-    // Initialises storage with zero medicines
     Storage();
 
     // Parameterised constructor
-    // Initialises storage with a given number of medicines
     Storage(int numOfMedicines);
 
     // Destructor 
@@ -31,25 +29,21 @@ class Storage{
 
     // Getter functions to access and return private variables
 
-    // Returns the number of medicines in storage
     int getNumOfMedicines();
 
-    // Returns the list of medicines in storage
     std::vector<Medicine> getMedicines();
 
     // Setter functions to modify private variables
 
-    // Sets the number of medicines in storage
     void setNumOfMedicines(int numOfMedicines);
 
-    // Sets the list of medicines in storage
     void setMedicines(std::vector<Medicine>& medicines);
 
     // Adds a new medicine to the storage
-    void addMedicine(Medicine med); // remove function
+    void addMedicine(Medicine med); 
 
     // Removes a medicine from the storage
-    void removeMedicine(Medicine med); // remove this function
+    void removeMedicine(Medicine med); 
 
 };
 

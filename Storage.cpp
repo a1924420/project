@@ -12,37 +12,33 @@ Storage::Storage(): numOfMedicines(0), medicines(new std::vector<Medicine>()){}
 // Initialises storage with a given number of medicines
 Storage::Storage(int numOfMedicines): numOfMedicines(numOfMedicines), medicines(new std::vector<Medicine>()){}
 
+// Destructor
 Storage::~Storage(){
     delete medicines;
 }
 
 // Getter for the number of medicines in storage
-// @return: returns the number of medicines in storage
 int Storage::getNumOfMedicines(){
     return numOfMedicines;
 }
 
 // Getter for the list of medicines in storage
-// @return: returns the list of medicines in storage
 std::vector<Medicine> Storage::getMedicines(){
     return *medicines;
 }
 
 // Setter for the number of medicines in storage
-// @param numOfMedicines: new number of medicines in storage
 void Storage::setNumOfMedicines(int numOfMedicines){
     this->numOfMedicines = numOfMedicines;
 }
 
 // Setter for the list of medicines in storage
-// @param medicines: new list of medicines in storage
 void Storage::setMedicines(std::vector<Medicine>& medicines){
     *(this->medicines) = medicines;
     numOfMedicines = this->medicines->size();
 }
 
 // Adds a new medicine to the storage
-// @param med: new medicine being added to storage
 void Storage::addMedicine(Medicine med){
 
     // Dynamically allocating new Medicine object for addition
@@ -59,7 +55,6 @@ void Storage::addMedicine(Medicine med){
 }
 
 // Removes a medicine from the storage
-// @param med: medicine being removed from storage, identified by its ID number
 void Storage::removeMedicine(Medicine med){
 
     // Dynamically allocating new Medicine object for removal

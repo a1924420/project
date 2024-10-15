@@ -26,36 +26,26 @@ class Game {
 
     // Getter functions to access and return private variables
 
-    // Returns the name of the game
     std::string getName();
 
-    // Returns the developers of the game
     std::string getDevelopers();
 
-    // Returns the publisher of the game
     std::string getPublisher();
 
-    // Returns the release date of the game
     std::string getReleaseDate();
 
-    // Returns the genre of the game
     std::string getGenre();
 
     // Setter functions to modify private variables
 
-    // Sets the name of the game
     void setName(std::string name);
 
-    // Sets the developers of the game
     void setDevelopers(std::string developers);
 
-    // Sets the publisher of the game
     void setPublisher(std::string publisher);
 
-    // Sets the release date of the game
     void setReleaseDate(std::string releaseDate);
 
-    // Sets the genre of the game
     void setGenre(std::string genre);
 
 };
