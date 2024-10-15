@@ -18,7 +18,6 @@
 using namespace std;
 
 int main(){
-
     Game game("Backyard Pharmacy", "38 SnifferDogg Studios", "Skag Horse Entertainment", "15/10/2024", "Dark Comedy");
     string action = "storage"; // player actions
     int menu = 4; // menu state; 0 to quit, 1 for instructions, 2 for about, 3 for start, 4 for default
@@ -105,8 +104,6 @@ int main(){
     }
 
     Player user(name, age, 0, 0);
-
-    int score = user.getScore();
 
     string answer = ""; // initialised with default value 
 
@@ -257,42 +254,42 @@ int main(){
                     cin >> med;
 
                         if (med == "med1"){
-                            patient.checker(med1, patient, user);
-                            if (patient.getCorrectOrNot() == true){
-                                score += 10;
+                            if (patient.checker(med1) == true){
+                                user.setScore(user.getScore() + 10);
                             }
+
                             sellInProgress = false;
                         } 
                         
                         else if (med == "med2"){
-                            patient.checker(med2, patient, user);
-                            if (patient.getCorrectOrNot() == true){
-                                score += 10;
+                            if (patient.checker(med2) == true){
+                                user.setScore(user.getScore() + 10);
                             }
+
                             sellInProgress = false;
                         } 
                         
                         else if (med == "med3"){
-                            patient.checker(med3, patient, user);
-                            if (patient.getCorrectOrNot() == true){
-                                score += 10;
+                            if (patient.checker(med3) == true){
+                                user.setScore(user.getScore() + 10);
                             }
+                            
                             sellInProgress = false;
                         } 
                         
                         else if (med == "med4"){
-                            patient.checker(med4, patient, user);
-                            if (patient.getCorrectOrNot() == true){
-                                score += 10;
+                            if (patient.checker(med4) == true){
+                                user.setScore(user.getScore() + 10);
                             }
+                            
                             sellInProgress = false;
                         } 
                         
                         else if (med == "med5"){
-                            patient.checker(med5, patient, user);
-                            if (patient.getCorrectOrNot() == true){
-                                score += 10;
+                            if (patient.checker(med5) == true){
+                                user.setScore(user.getScore() + 10);
                             }
+                            
                             sellInProgress = false;
                         } 
                         
@@ -358,9 +355,7 @@ int main(){
 
     cout << "It's now the end of your busy working day." << endl;
 
-    user.setScore(score);
-
-    std::cout << user.getScore() << std::endl;
+    cout << user.getScore() << endl;
 
     EndScene endscene;
 

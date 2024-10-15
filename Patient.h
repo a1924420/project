@@ -33,7 +33,7 @@ class Patient: public Customer{
 //Sets if the correct medication was distributed to the correct person
     void setCorrectOrNot(bool correctOrNot);
 //Checks  the customer details
-    void checker(Medicine& med, Patient& patient, Player& player);
+    bool checker(Medicine med);
 
 };
 
