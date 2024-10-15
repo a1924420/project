@@ -16,7 +16,7 @@ Patient::Patient(std::string name, int age, int ID, std::string illness, std::st
     setName(name);
     setAge(age);
     setID(ID);
-    setCorrectOrNot(false);
+    setCorrectOrNot(correctOrNot);
     setIllness(illness);
     setMedicalHistory(medicalHistory);
 }
