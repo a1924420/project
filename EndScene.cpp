@@ -15,7 +15,6 @@ void EndScene::goodEnding(){
 
 void EndScene::badEnding(){
     cout << "The night is impossibly dark. You wander from alleyway to alleyway, searching for your car.\n";
-    cin.clear();
     cin.get();
     cout << "Where is it? You wonder.\n";
     cin.get();

@@ -195,9 +195,8 @@ int main(){
         Customer customer = visitors.getVisitors()->at(i); // fetch customer aligned with current index
         
         customer.greetingDialogue(customer);
-        cin.get();
-        cout << customer.getIllness() << endl;
-        cin.get();
+        
+        cout << customer.getIllness() << "\n" << endl;
 
         while (true) {
             cout << "Enter what you would like to do! Remember, you can go back to the menu at any time." << endl;
@@ -347,10 +346,12 @@ int main(){
     EndScene endscene;
 
     if (user.getScore() >= 40){
+        std::cout << std::endl;
         endscene.goodEnding();
     } 
     
     else {
+        std::cout << std::endl;
         endscene.badEnding();
     }
 
