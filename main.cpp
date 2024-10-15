@@ -189,6 +189,9 @@ int main(){
     storage.addMedicine(med5);
 
     for (int i = 0; i < visitors.getCurrentCapacity(); i++){
+
+        std::cout << std::endl;
+
         Customer customer = visitors.getVisitors()->at(i); // fetch customer aligned with current index
         
         customer.greetingDialogue(customer);
