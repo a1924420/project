@@ -244,11 +244,11 @@ int main(){
 
                     cout << "Which medicine are you selling to this patient?" << endl;
 
-                    cout << "Enter 'med1' to sell medicine 1 to patient. \n"
-                    << "Enter 'med2' to sell medicine 2 to patient. \n"
-                    << "Enter 'med3' to sell medicine 3 to patient. \n"
-                    << "Enter 'med4' to sell medicine 4 to patient. \n"
-                    << "Enter 'med5' to sell medicine 5 to patient. \n"
+                    cout << "Enter 'med1' to sell Panadol to patient. \n"
+                    << "Enter 'med2' to sell Xanax to patient. \n"
+                    << "Enter 'med3' to sell Fluoxetine to patient. \n"
+                    << "Enter 'med4' to sell Loperamide to patient. \n"
+                    << "Enter 'med5' to sell Dihydrocodeine to patient. \n"
                     << "Enter 'storage' to view storage again. \n";
 
                     cin >> med;
@@ -313,6 +313,7 @@ int main(){
             
             else if (action == "deny"){
                 user.deny();
+                cout << endl;
 
                 break;
             } 
@@ -353,9 +354,7 @@ int main(){
         }
     }
 
-    cout << "It's now the end of your busy working day." << endl;
-
-    cout << user.getScore() << endl;
+    cout << "It's now the end of your busy working day. \n";
 
     EndScene endscene;
 
