@@ -195,9 +195,6 @@ int main(){
         while (true) {
             cout << "Enter what you would like to do! Remember, you can go back to the menu at any time." << endl;
             
-            /*cin.clear();
-            cin.ignore(365, '\n');
-            getline(cin, action);*/
             cin >> action;
 
             if (action == "age"){ // ask for customer age
@@ -291,11 +288,13 @@ int main(){
                         }
                     }
                 }
+
                 break;
             } 
             
             else if (action == "deny"){
-                cout << "'No prescription medicines are sold in this establishment,' you say." << endl;
+                user.deny();
+
                 if (customer.getID() == 0){
                     Police police;
                     customer = police;
