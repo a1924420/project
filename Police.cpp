@@ -23,7 +23,7 @@ Police::Police(std::string name, int age, int ID, std::string illness, std::stri
 }
 // Arrests the player 
 void Police::arrest(){
-    cout << "Stop right there, you’ve been arrested for selling medication without a proper license!" << endl;
+    cout << "Stop right there, you’ve been arrested for selling medication without a proper license!\n" << endl;
     exit(0); // ends game at this point - ends entire code run
 }
 //This is said by the police officer when the player denies the police.
@@ -32,7 +32,9 @@ void Police::rightDialogue(){
 }
 // This is the wrong dialogue that will be output when the police catch the player
 void Police::wrongDialogue(){
-    cout << "Wait, so you do sell medicine here?" << endl;
+    cout << "\nWait, so you do sell medicine here?\n" << endl;
+    cin.get();
     cout << "That's illegal!" << endl;
+    cin.get();
     arrest();
 }
