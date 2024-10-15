@@ -21,7 +21,7 @@ void EndScene::badEnding(){
     cout << "Your stomach hurts from the copious amounts of Panadol™ you've been taking all day.\n";
     cin.get();
     cout << "If only your mother-- hey, what was that? Did you see that?\n" << endl;
-    
+    /*
      // Get the desktop mode to find the screen dimensions
     sf::VideoMode desktop = sf::VideoMode::getDesktopMode();
 
@@ -74,7 +74,7 @@ void EndScene::badEnding(){
         window.clear();
         window.draw(sprite);
         window.display();
-    }
+    }*/
 
     cout << "'Hey, freeze! It's the police!' \n";
     cin.get();
