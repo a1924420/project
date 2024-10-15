@@ -6,10 +6,6 @@
 #include "EndScene.h"
 #include <SFML/System/Clock.hpp>
 
-
-
-
-
 using namespace std;
 
 void EndScene::goodEnding(){
