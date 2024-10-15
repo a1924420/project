@@ -3,6 +3,10 @@
 #include "Player.h"
  #include <SFML/Graphics.hpp>
 #include "EndScene.h"
+#include <SFML/System/Clock.hpp>
+
+
+
 
 
 using namespace std;
