@@ -51,7 +51,9 @@ int main(){
             << "Good luck! \n";
             cin.get();
 
-        } else if (menu == 2){
+        } 
+        
+        else if (menu == 2){
             cout << "Name:         " << game.getName() << endl;
             cin.get();
             cout << "Developers:   " << game.getDevelopers() << endl;
