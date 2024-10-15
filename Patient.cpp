@@ -47,7 +47,7 @@ void Patient::setCorrectOrNot(bool correctOrNot) {
 }
 
 // This checks if the player has prescribed the correct information to customer
-void Patient::checker(Medicine med, Patient patient, Player player){
+void Patient::checker(Medicine& med, Patient& patient, Player& player){
 
     if (med.getMedID() == patient.getPrescriptionID()){
         patient.setCorrectOrNot(true);

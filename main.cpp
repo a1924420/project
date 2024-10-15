@@ -236,8 +236,7 @@ int main(){
                 } 
                 
                 else {
-                    Patient patient; // new Patient object called "patient"
-                    customer = patient;
+                    Patient& patient = static_cast<Patient&>(customer); // new Patient object called "patient"
 
                     patient.setPrescriptionID(i+1);
 
@@ -259,7 +258,6 @@ int main(){
 
                         if (med == "med1"){
                             patient.checker(med1, patient, user);
-                            std::cout << patient.getCorrectOrNot();
                             if (patient.getCorrectOrNot() == true){
                                 score += 10;
                             }
@@ -268,7 +266,6 @@ int main(){
                         
                         else if (med == "med2"){
                             patient.checker(med2, patient, user);
-                            std::cout << patient.getCorrectOrNot();
                             if (patient.getCorrectOrNot() == true){
                                 score += 10;
                             }
@@ -277,7 +274,6 @@ int main(){
                         
                         else if (med == "med3"){
                             patient.checker(med3, patient, user);
-                            std::cout << patient.getCorrectOrNot();
                             if (patient.getCorrectOrNot() == true){
                                 score += 10;
                             }
@@ -286,7 +282,6 @@ int main(){
                         
                         else if (med == "med4"){
                             patient.checker(med4, patient, user);
-                            std::cout << patient.getCorrectOrNot();
                             if (patient.getCorrectOrNot() == true){
                                 score += 10;
                             }
@@ -295,7 +290,6 @@ int main(){
                         
                         else if (med == "med5"){
                             patient.checker(med5, patient, user);
-                            std::cout << patient.getCorrectOrNot();
                             if (patient.getCorrectOrNot() == true){
                                 score += 10;
                             }
