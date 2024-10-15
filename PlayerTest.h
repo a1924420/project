@@ -22,16 +22,28 @@ public:
             cout << "Error 1: medicineID is out of bounds.";
         }
 
+        else {
+            cout << "Test 1 passed. \n";
+        }
+
         user.takeMedicine(9);
 
         if (user.getInventory() == 9) {
             cout << "Error 2: medicineID is out of bounds.";
         }
 
+        else {
+            cout << "Test 2 passed. \n";
+        }
+
         user.takeMedicine(8);
 
         if (user.getInventory() != 8) {
             cout << "Error 3: inventory has not taken ID within bounds.";
+        }
+
+        else {
+            cout << "Test 3 passed. \n";
         }
     };
 
@@ -42,16 +54,28 @@ public:
             cout << "Error 1: name did not set correctly. Current value is " << user.getName();
         }
 
+        else {
+            cout << "Test 1 passed. \n";
+        }
+
         user.setName("123456789010111213");
 
         if (user.getName() == "123456789010111213") {
             cout << "Error 2: name exceeds maximum length (12).";
         }
 
+        else {
+            cout << "Test 2 passed. \n";
+        }
+
         user.setName(" ");
 
         if (user.getName() == " ") {
             cout << "Error 3: name must contain characters.";
+        }
+
+        else {
+            cout << "Test 3 passed. \n";
         }
     };
 
@@ -64,16 +88,28 @@ public:
             cout << "Error 1: age did not take.";
         }
 
+        else {
+            cout << "Test 1 passed. \n";
+        }
+
         user.setAge(1000);
 
         if (user.getAge() != 1000) {
             cout << "Error 2: age did not take.";
         }
 
+        else {
+            cout << "Test 2 passed. \n";
+        }
+
         user.setAge('abc');
 
         if (user.getAge() == 'abc') {
             cout << "Error 3: age has taken a non-integer value.";
+        }
+
+        else {
+            cout << "Test 3 passed. \n";
         }
     }
 
@@ -84,16 +120,32 @@ public:
             cout << "Error 1: Name did not set correctly. Current value is: " << Marge.getName();
         }
 
+        else {
+            cout << "Test 1 passed. \n";
+        }
+
         if (Marge.getAge() != 28) {
             cout << "Error 2: Age did not set correctly. Current value is: " << Marge.getAge();
+        }
+
+        else {
+            cout << "Test 2 passed. \n";
         }
 
         if (Marge.getInventory() != 1) {
             cout << "Error 3: Inventory did not set correctly. Current value is: " << Marge.getInventory();
         }
 
+        else {
+            cout << "Test 3 passed. \n";
+        }
+
         if (Marge.getScore() != 0) {
             cout << "Error 4: Score did not set correctly. Current value is: " << Marge.getScore();
+        }
+
+        else {
+            cout << "Test 4 passed. \n";
         }
     }
 
