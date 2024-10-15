@@ -295,18 +295,6 @@ int main(){
             else if (action == "deny"){
                 user.deny();
 
-                if (customer.getID() == 0){
-                    Police police;
-                    customer = police;
-                    police.rightDialogue();
-                } 
-                
-                else {
-                    Patient patient;
-                    customer = patient;
-                    patient.wrongDialogue();
-                }
-
                 break;
             } 
             
