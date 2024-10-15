@@ -1,106 +1,210 @@
+// #include <iostream>
+// #include <string>
+// #include "Person.h"
+// #include "Customer.h"
+// #include "Police.h"
+// #include <SFML/Graphics.hpp> // Include SFML graphics
+// #include <SFML/Audio.hpp>
+
+
+#include <SFML/System/Clock.hpp> 
+#include <SFML/Graphics.hpp>
+#include <SFML/System/Clock.hpp> // For sf::Clock
 #include <iostream>
-#include <string>
-#include "Person.h"
-#include "Customer.h"
-#include "Police.h"
-#include <SFML/Graphics.hpp> // Include SFML graphics
-#include <SFML/Audio.hpp>
-
 using namespace std;
+#include <SFML/System/Clock.hpp>
+#include <SFML/Graphics.hpp>
+#include <iostream>
 
-// Default constructor
-Police::Police() {
-    setName(" ");
-    setAge(0);
-    setID(0);
-    setCorrectOrNot(false);
-}
+int main() {
+    // Get the desktop mode to find the screen dimensions
+    sf::VideoMode desktop = sf::VideoMode::getDesktopMode();
 
-// Parameterized constructor
-Police::Police(std::string name, int age, int ID, std::string illness, std::string medicalHistory) {
-    setName(name);
-    setAge(age);
-    setID(ID);
-    setIllness(illness);
-    setMedicalHistory(medicalHistory);
-}
+    // Define the window size
+     int windowWidth = 800;
+     int windowHeight = 600;
 
-// Display the arrest message and show the police officer image
-void Police::arrest() {
-    cout << "Stop right there, you’ve been arrested for selling medication without a proper license!" << endl;
+    // Calculate the position to center the window
+    int posX = (desktop.width - windowWidth) / 2;
+    int posY = (desktop.height - windowHeight) / 2;
 
-    // Create a window to display the arrest image
-    sf::RenderWindow window(sf::VideoMode(800, 600), "Arrested!");
+    // Create the window and position it at (posX, posY)
+    sf::RenderWindow window(sf::VideoMode(windowWidth, windowHeight), "Snoop entering!");
+    window.setPosition(sf::Vector2i(posX, posY));  // Center the window
 
-    // Load the police officer texture and create a sprite
-    sf::Texture policeOfficerTexture;
-    if (!policeOfficerTexture.loadFromFile("police officer.png")) {
-        cerr << "Error loading police officer.png" << endl;
-        return; // Exit if the image cannot be loaded
+    // Load the texture
+    sf::Texture texture;
+    if (!texture.loadFromFile("./snoop.jpg")) {  // Ensure the correct path and extension are used
+        std::cout << "Error loading image" << std::endl;
+        return -1;
     }
-    sf::Sprite policeOfficerSprite(policeOfficerTexture);
 
- sf::Music arrestMusic;
-    if (!arrestMusic.openFromFile("arrest_music.ogg")) {  // Make sure to provide a valid sound file path
-        cerr << "Error loading arrest_music.ogg" << endl;
-        return; // Exit if the sound cannot be loaded
-    }
-    
-    // Play the music or sound effect
-    arrestMusic.play();
+    // Create sprite with loaded texture
+    sf::Sprite sprite(texture);
 
+    // Center the sprite inside the window
+    sf::Vector2u textureSize = texture.getSize();  // Texture size
+    float spritePosX = (windowWidth - textureSize.x) / 2.0f;
+    float spritePosY = (windowHeight - textureSize.y) / 2.0f;
+    sprite.setPosition(spritePosX, spritePosY);
 
+    // Create a clock to measure the time
+    sf::Clock clock;
 
-    // Main loop for the window to display the arrest image
     while (window.isOpen()) {
         sf::Event event;
         while (window.pollEvent(event)) {
-            if (event.type == sf::Event::Closed)
+            if (event.type == sf::Event::Closed) {
                 window.close();
+                exit(EXIT_SUCCESS);
+            }
         }
-        
 
-        // Clear the window
-        window.clear(sf::Color::Black);
+        // Check if 5 seconds have passed
+        if (clock.getElapsedTime().asSeconds() >= 5) {
+            window.close();  // Close the window after 5 seconds
+            exit(EXIT_SUCCESS);  // Exit the program if needed
+        }
 
-        // Draw the police officer sprite
-        window.draw(policeOfficerSprite);
-
-        // Display the contents of the window
+        // Clear the window, draw the sprite, and display the contents
+        window.clear();
+        window.draw(sprite);
         window.display();
     }
 
-    exit(0); // End the game (or program) after showing the image
+    return 0;
 }
 
-// Dialogue for a correct action
-void Police::rightDialogue() {
-    cout << "Hmm okay, have a good day" << endl;
-}
 
-// Dialogue for a wrong action, leading to an arrest
-void Police::wrongDialogue() {
-    cout << "Wait, so you do sell medicine here?" << endl;
-    cout << "That's illegal!" << endl;
-    arrest(); // Call the arrest function, which will display the image
-}
+// // // herb enters the shop code:
+// int main() {
+//     // Get the desktop mode to find the screen dimensions
+//     sf::VideoMode desktop = sf::VideoMode::getDesktopMode();
 
-// needs to be implemented and add the correct path// NOT DONE YET
+//     // Define the window size
+//      int windowWidth = 800;
+//      int windowHeight = 600;
 
-// Load the police officer image from the resources folder
-if (!policeOfficerTexture.loadFromFile("resources/police officer.png")) {
-    cerr << "Error loading police officer.png" << endl;
-    return;
-}
+//     // Calculate the position to center the window
+//     int posX = (desktop.width - windowWidth) / 2;
+//     int posY = (desktop.height - windowHeight) / 2;
 
-// Load the arrest music from the resources folder
-if (!arrestMusic.openFromFile("resources/arrest_music.ogg")) {
-    cerr << "Error loading arrest_music.ogg" << endl;
-    return;
-}
+//     // Create the window and position it at (posX, posY)
+//     sf::RenderWindow window(sf::VideoMode(windowWidth, windowHeight), "Snoop entering!");
+//     window.setPosition(sf::Vector2i(posX, posY));  // Center the window
 
-//git add resources/police\ officer.png resources/arrest_music.ogg
-git commit -m "Added police officer image and arrest music"
-git push
+//     // Load the texture
+//     sf::Texture texture;
+//     if (!texture.loadFromFile("./realHERB.jpg")) {  // Ensure the correct path and extension are used
+//         std::cout << "Error loading image" << std::endl;
+//         return -1;
+//     }
+
+//     // Create sprite with loaded texture
+//     sf::Sprite sprite(texture);
+
+//     // Center the sprite inside the window
+//     sf::Vector2u textureSize = texture.getSize();  // Texture size
+//     float spritePosX = (windowWidth - textureSize.x) / 2.0f;
+//     float spritePosY = (windowHeight - textureSize.y) / 2.0f;
+//     sprite.setPosition(spritePosX, spritePosY);
+
+//     // Create a clock to measure the time
+//     sf::Clock clock;
+
+//     while (window.isOpen()) {
+//         sf::Event event;
+//         while (window.pollEvent(event)) {
+//             if (event.type == sf::Event::Closed) {
+//                 window.close();
+//                 exit(EXIT_SUCCESS);
+//             }
+//         }
+
+//         // Check if 5 seconds have passed
+//         if (clock.getElapsedTime().asSeconds() >= 5) {
+//             window.close();  // Close the window after 5 seconds
+//             exit(EXIT_SUCCESS);  // Exit the program if needed
+//         }
+
+//         // Clear the window, draw the sprite, and display the contents
+//         window.clear();
+//         window.draw(sprite);
+//         window.display();
+//     }
+
+//     return 0;
+// }
 
 
+//    
+
+//     RenderWindow window(VideoMode(800, 600), "snow says hello!");
+//     sf::Texture texture;
+//     texture.loadFromF(".snow");
+
+//     Sprite sprite(texture);  // Create sprite with loaded texture
+
+//     while (window.isOpen()) {
+//         Event event;
+//         while (window.pollEvent(event)) {
+//             if (event.type == Event::Closed) {
+//                 window.close();
+//                 cout << "closed" << endl;
+//                 exit(EXIT_SUCCESS);
+//             }
+//         }
+//          if (clock.getElapsedTime().asSeconds() >= 10) {
+//             window.close();  // Close the window after 10 seconds
+//             cout << "Snoop display ended after 10 seconds." << endl;
+//             exit(EXIT_SUCCESS);  // Exit the program if needed
+//         }
+
+//         window.clear();      // Clear the window
+//         window.draw(sprite); // Draw the sprite
+//         window.display();    // Display the contents of the window
+//     }
+
+
+//     RenderWindow window(VideoMode(800, 600), "piper enters");
+//     sf::Texture texture;
+//     texture.loadFromF("./piper");
+
+//     Sprite sprite(texture);  // Create sprite with loaded texture
+
+//     while (window.isOpen()) {
+//         Event event;
+//         while (window.pollEvent(event)) {
+//             if (event.type == Event::Closed) {
+//                 window.close();
+//                 cout << "closed" << endl;
+//                 exit(EXIT_SUCCESS);
+//             }
+//         }
+
+//         window.clear();      // Clear the window
+//         window.draw(sprite); // Draw the sprite
+//         window.display();    // Display the contents of the window
+//     }
+
+
+//     RenderWindow window(VideoMode(800, 600), "euphoria enters");
+//     sf::Texture texture;
+//     texture.loadFromF("./euphoria");
+
+//     Sprite sprite(texture);  // Create sprite with loaded texture
+
+//     while (window.isOpen()) {
+//         Event event;
+//         while (window.pollEvent(event)) {
+//             if (event.type == Event::Closed) {
+//                 window.close();
+//                 cout << "closed" << endl;
+//                 exit(EXIT_SUCCESS);
+//             }
+//         }
+
+//         window.clear();      // Clear the window
+//         window.draw(sprite); // Draw the sprite
+//         window.display();    // Display the contents of the window
+//     }
