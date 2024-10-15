@@ -23,6 +23,8 @@ int main(){
     string action = "storage"; // player actions
     int menu = 4; // menu state; 0 to quit, 1 for instructions, 2 for about, 3 for start, 4 for default
 
+    std::cout << game.getName() << "\n" << std::endl;
+
     while (menu != 3){
         cout << "For 'How to Play': Enter 1" << endl;
         cout << "For 'About Game': Enter 2" << endl;
@@ -116,7 +118,7 @@ int main(){
     << "That's right... you're a backyard pharmacist! \n";
 
     cout << "Now, are you ready to start? \n"
-    << "Type 'yes' or 'no'.";
+    << "Type 'yes' or 'no'.\n";
 
     cin >> answer;
 
@@ -190,7 +192,9 @@ int main(){
         Customer customer = visitors.getVisitors()->at(i); // fetch customer aligned with current index
         
         customer.greetingDialogue(customer);
+        cin.get();
         cout << customer.getIllness() << endl;
+        cin.get();
 
         while (true) {
             cout << "Enter what you would like to do! Remember, you can go back to the menu at any time." << endl;
